@@ -1,10 +1,41 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<% @messages.each do |message| %>
-  <% # render :partial => "home/listing", :locals => { :post => message } %>
+<% if @user != nil %>
+  <h1>The User</h1>
+  <%= 'All messages received from:' << @user.phone_number %> <br/><br/>
+  <% @user.posts.each do |post| %>
+    <%= 'Date:' << post.sms_date.to_s %> <br/>
+    <%= 'Body:' << post.sms_body %> <br/><hr/>
+  <% end %>
+<% else %> <!-- if user is nil, render all user links -->
+  <h1>User List</h1>
+  <p>List all messages from:</p>
+  <ul>
+    <% @users.each do |u| %>
+      <li><%= link_to u.phone_number, "/home?id=" << u.link %> <br/></li>
+    <% end %>
+</ul>
+<% end %>
+
+
+<!-- <% @messages.each do |message| %>
   <%= 'From:' << message.from %> <br/>
   <%= 'To:' << message.to %> <br/>
   <%= 'Date:' << message.date_sent %> <br/>
   <%= 'Body:' << message.body %> <br/>
   <hr/>
 <% end %>
+<hr/>
+<h1>Users</h1>
+<% if @users == nil %>
+  <%= 'No users found!' %>
+<% else %>
+  <% @users.each do |u| %>
+    <%= 'Number:' << u.phone_number %> <br/>
+    <%= 'Link:' << u.link %> <br/>
+    <%= 'NumPosts:' << u.posts.length.to_s %> <br/>
+    <% u.posts.each do |post| %>
+      <%= post.sms_body %> <br/>
+    <% end %>
+    <hr/>
+  <% end %> 
+<% end %>
+<hr/>-->
