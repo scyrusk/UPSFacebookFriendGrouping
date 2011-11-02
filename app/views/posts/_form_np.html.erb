@@ -1,0 +1,47 @@
+<% form_for @post, :url => @link do |f| %>
+	<%= f.error_messages %>
+  
+  <div class="span-4">
+    <%= f.label :sms_date %>
+	</div>
+	<div class="span-14 last">
+    <%= f.text_field :sms_date, :class => "text", :disabled => "disabled" %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label 'Description' %>
+	</div>
+	<div class="span-14 last">
+		<%= f.text_area :sms_body, :style => "height:200px;" %>
+	</div>
+	<hr class="space" />
+
+	<div class="span-4">
+		<%= f.label :np1, 'What type of post was it? (e.g. direct message, wall post, picture)' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= f.text_area :np1, :style => "height:400px;" %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label :np2, 'Who was the intended audience for the post?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= f.text_area :np2, :style => "height:400px;" %>
+	</div>
+	<hr class="space" />
+
+	<div class="span-4">
+		<%= f.label :np3, 'Why did you post it?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= f.text_area :np3, :style => "height:400px;" %>
+	</div>
+  <hr class="space" />
+
+	<div class="prepend-4 span-14 last">
+	    <%= f.submit(@post.new_record? ? 'Create' : 'Update', :class => "submit") %>
+	</div>
+<% end %>

@@ -1,0 +1,63 @@
+<% if @user != nil %> <!-- if we have an ID parameter that refers to a real user -->
+  <h1><%= 'Welcome,' << @user.phone_number << '!' %></h1>
+  <% if @renderPosts %> <!-- if we have a valid date parameter with a list of posts to render -->
+    <% if @posts.length > 0 %>
+      <p class="instructions">Select a message below to fill out the additional questionnaire...</p>
+      <% @posts.each do |post| %>
+        <%= 'Date:' << post.sms_date.to_s %> <br/>
+        <%= 'Description:' << post.sms_body %> <br/>
+        <%= 'Completed:' << post.completed.to_s %> <br/>
+        <%= link_to 'Edit', "/posts?id=" << @user.link << ";postid=" << post.id.to_s << ";type=" << post.kind << ";uc=u" %><br/><hr/>
+      <% end %>
+    <% else %>
+      Didn't hold back on Facebook today? <%= link_to 'Tell Us About It', "/posts?id=" << @user.link << ";date=" << params[:date] << ";type=np;uc=c" %>!<br/>
+      Didn't post anything on Facebook today? <%= link_to 'Tell Us Why', "/posts?id=" << @user.link << ";date=" << params[:date] << ";type=nn;uc=c" %><br/>
+    <% end %>
+    Forgot to text something in? No worries! Just <%= link_to 'Click Here', "/posts?id=" << @user.link << ";date=" << params[:date] << ";type=p;uc=c" %> to create a new entry.<br/>
+    <%= link_to '<< Home', "/home?id=" << @user.link %>
+  <% else %>
+    <p class="instructions">Select one of the dates below to complete the survey for that day!</p> <br/>
+    <table class="survey_list" border="1">
+      <tr>
+        <td>Date</td>
+        <td>Completed?</td>
+      </tr>
+      <% @dateLinks.each do |ds,comp| %>
+        <tr> <td> <%= link_to ds, "/home?id=" << @user.link << ";date=" << ds %></td><td><%= comp.to_s %></td></tr>
+      <% end %>
+    </table>
+  <% end %>
+<% else %> <!-- if user is nil, render all user links -->
+  <h1>User List</h1>
+  <p>List all messages from:</p>
+  <ul>
+    <% @users.each do |u| %>
+      <li><%= link_to u.phone_number, "/home?id=" << u.link %> <br/></li>
+    <% end %>
+</ul>
+<% end %>
+
+
+<!-- <% @messages.each do |message| %>
+  <%= 'From:' << message.from %> <br/>
+  <%= 'To:' << message.to %> <br/>
+  <%= 'Date:' << message.date_sent %> <br/>
+  <%= 'Body:' << message.body %> <br/>
+  <hr/>
+<% end %>
+<hr/>
+<h1>Users</h1>
+<% if @users == nil %>
+  <%= 'No users found!' %>
+<% else %>
+  <% @users.each do |u| %>
+    <%= 'Number:' << u.phone_number %> <br/>
+    <%= 'Link:' << u.link %> <br/>
+    <%= 'NumPosts:' << u.posts.length.to_s %> <br/>
+    <% u.posts.each do |post| %>
+      <%= post.sms_body %> <br/>
+    <% end %>
+    <hr/>
+  <% end %> 
+<% end %>
+<hr/>-->
