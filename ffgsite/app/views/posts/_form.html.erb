@@ -1,0 +1,63 @@
+<% form_for @post, :url => @link do |f| %>
+	<%= f.error_messages %>
+
+	<div class="span-4">
+    <%= f.label :sms_date %>
+	</div>
+	<div class="span-14 last">
+    <%= f.text_field :sms_date, :class => "text", :disabled => "disabled" %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label 'Description' %>
+	</div>
+	<div class="span-14 last">
+		<%= f.text_area :sms_body, :style => "height:200px;" %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label :p1, 'Why did you decide not to post this to Facebook?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= f.text_area :p1, :style => "height:200px;" %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label :p2, 'Were there any people you would especially not want to see this post?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= f.text_area :p2, :style => "height:200px;" %>
+	</div>
+	<hr class="space" />
+
+	<div class="span-4">
+		<%= f.label :p3, 'Were there any people you would especially want to see this post?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= f.text_area :p3, :style => "height:200px;" %>
+	</div>
+  <hr class="space" />
+
+	<div class="span-4">
+		<%= f.label :p4, 'Where were you when you decided not to post this to Facebook?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= f.text_area :p4, :style => "height:200px;" %>
+	</div>
+  <hr class="space" />
+
+	<div class="span-4">
+		<%= f.label :p5, 'What were you doing when you decided not to post this to Facebook?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= f.text_area :p5, :style => "height:200px;" %>
+	</div>
+  <hr class="space" />
+
+	<div class="prepend-4 span-14 last">
+	    <%= f.submit(@post.new_record? ? 'Create' : 'Update', :class => "submit") %>
+	</div>
+<% end %>
