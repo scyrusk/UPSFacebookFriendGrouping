@@ -4,6 +4,7 @@ require 'Digest'
 
 class HomeController < ApplicationController
   def index
+    UserMailer.deliver_hithere
     account_sid = 'AC0bb1fd0388354f33b14da8ad86289a4f'
     auth_token = '4e443ae95126ba36969b4ca1208d5453'
     @client = Twilio::REST::Client.new account_sid, auth_token
@@ -15,7 +16,7 @@ class HomeController < ApplicationController
       Rails::logger.debug message.body
       user = User.find(:first, :conditions => ["phone_number = ?",message.from])
       if (user == nil)
-        Rais::logger.debug 'Creating new user...'
+        Rails::logger.debug 'Creating new user...'
         user = User.new do |u|
           u.phone_number = message.from
           u.link = Digest::MD5.hexdigest(message.from)
@@ -26,7 +27,7 @@ class HomeController < ApplicationController
       
       post = Post.find(:first, :conditions => ["sms_body = ?", message.body])
       if (post == nil)
-        Rais::logger.debug 'Creating new post...'
+        Rails::logger.debug 'Creating new post...'
         post = Post.new do |p|
           p.sms_date = message.date_sent
           p.sms_body = message.body
