@@ -32,24 +32,23 @@ class HomeController < ApplicationController
           p.sms_date = message.date_sent
           p.sms_body = message.body
           p.user = user
+          p.kind = "p"
+          p.completed = false
           p.save
         end
         Rails::logger.debug 'Done...'
       end
     end
+    
+    # Hack...there may be a better way to do this but whatever
+    # Saves posts sent by one of the forms
+    if (params[:post] != nil && params[:postid] != nil)
+      post = Post.find(params[:postid])
+      post.update_attributes(params[:post])
+      post.update_completed
+    end
 
     @users = User.find(:all)
-    if (@users == nil)
-      Rails::logger.debug '@users is nil for some reason'
-    else
-      Rails::logger.debug '@users isn\'t nil in the controller'
-    end
-    @posts = Post.find(:all)
-    if (@posts == nil)
-      Rails::logger.debug '@posts is nil for some reason'
-    else
-      Rails::logger.debug '@posts isn\'t nil in the controller'
-    end
 
     userID = params[:id]
     if userID == nil
@@ -57,7 +56,37 @@ class HomeController < ApplicationController
     else
       Rails::logger.debug '@userID param is ' << userID
       @user = User.find_by_link(params[:id])
+      datePosts = params[:date]
+      if datePosts == nil
+        Rails::logger.debug 'datePosts param is nil'
+        dateStrings = @user.posts.map {|post| post.sms_date.strftime('%Y/%m/%d')}.uniq
+        @dateLinks = {}
+        dateStrings.each {|ds|
+          datePosts = getPostsAtDate( @user, ds)
+          if datePosts.length > 0
+            @dateLinks[ds] = datePosts.all? {|p| p.completed}
+          else
+            @dateLinks[ds] = false
+          end
+        }
+        @renderPosts = false
+      elsif datePosts == 'all'
+        @posts = Post.find(:all)
+        @renderPosts = true
+      else
+        Rails::logger.debug 'datePosts param is ' << datePosts
+        dateSplit = datePosts.split('/')
+        d = DateTime.new(dateSplit[0].to_i,dateSplit[1].to_i,dateSplit[2].to_i)
+        Rails::logger.debug d.to_s
+        @posts = getPostsAtDate(@user, datePosts)
+        @renderPosts = true
+      end
     end
+  end
 
+  def getPostsAtDate( user, dateStr )
+    dateSplit = dateStr.split('/')
+    d = DateTime.new(dateSplit[0].to_i,dateSplit[1].to_i,dateSplit[2].to_i)
+    Post.find(:all, :conditions => [ "sms_date >= ? AND sms_date < ? AND user_id = ?", d.beginning_of_day, d.tomorrow.beginning_of_day, user.id])
   end
 end
