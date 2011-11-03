@@ -1,0 +1,9 @@
+<h1>Users#index</h1>
+
+  <h1>User List</h1>
+  <p>List all messages from:</p>
+  <ul>
+    <% @users.each do |u| %>
+      <li><%= link_to  u.phone_number, edit_user_path(u) %> <br/></li> <!--u.phone_number, "/home?id=" << u.link-->
+	<% end %>
+</ul>
