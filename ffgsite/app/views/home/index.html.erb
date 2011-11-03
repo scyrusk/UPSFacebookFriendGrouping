@@ -27,14 +27,7 @@
       <% end %>
     </table>
   <% end %>
-<% else %> <!-- if user is nil, render all user links -->
-  <h1>User List</h1>
-  <p>List all messages from:</p>
-  <ul>
-    <% @users.each do |u| %>
-      <li><%= link_to u.phone_number, "/home?id=" << u.link %> <br/></li>
-    <% end %>
-</ul>
+
 <% end %>
 
 

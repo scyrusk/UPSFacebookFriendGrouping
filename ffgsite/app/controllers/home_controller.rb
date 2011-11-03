@@ -4,7 +4,6 @@ require 'Digest'
 
 class HomeController < ApplicationController
   def index
-    UserMailer.deliver_hithere
     account_sid = 'AC0bb1fd0388354f33b14da8ad86289a4f'
     auth_token = '4e443ae95126ba36969b4ca1208d5453'
     @client = Twilio::REST::Client.new account_sid, auth_token
@@ -53,6 +52,8 @@ class HomeController < ApplicationController
     userID = params[:id]
     if userID == nil
       Rails::logger.debug '@userID param is nil'
+      redirect_to users_url
+      
     else
       Rails::logger.debug '@userID param is ' << userID
       @user = User.find_by_link(params[:id])
