@@ -27,30 +27,4 @@
       <% end %>
     </table>
   <% end %>
-
 <% end %>
-
-
-<!-- <% @messages.each do |message| %>
-  <%= 'From:' << message.from %> <br/>
-  <%= 'To:' << message.to %> <br/>
-  <%= 'Date:' << message.date_sent %> <br/>
-  <%= 'Body:' << message.body %> <br/>
-  <hr/>
-<% end %>
-<hr/>
-<h1>Users</h1>
-<% if @users == nil %>
-  <%= 'No users found!' %>
-<% else %>
-  <% @users.each do |u| %>
-    <%= 'Number:' << u.phone_number %> <br/>
-    <%= 'Link:' << u.link %> <br/>
-    <%= 'NumPosts:' << u.posts.length.to_s %> <br/>
-    <% u.posts.each do |post| %>
-      <%= post.sms_body %> <br/>
-    <% end %>
-    <hr/>
-  <% end %> 
-<% end %>
-<hr/>-->
