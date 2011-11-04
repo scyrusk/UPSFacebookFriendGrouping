@@ -4,7 +4,6 @@ require 'Digest'
 
 class HomeController < ApplicationController
   def index
-    User.send_daily_email
     account_sid = 'AC0bb1fd0388354f33b14da8ad86289a4f'
     auth_token = '4e443ae95126ba36969b4ca1208d5453'
     @client = Twilio::REST::Client.new account_sid, auth_token
@@ -20,6 +19,8 @@ class HomeController < ApplicationController
         user = User.new do |u|
           u.phone_number = message.from
           u.link = Digest::MD5.hexdigest(message.from)
+          u.email = message.body
+          u.doneparticipating = DateTime.now + (3600 * 24 * 8)
           u.save
         end
         Rails::logger.debug 'Done...'
