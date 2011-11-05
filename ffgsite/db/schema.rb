@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111103173717) do
+ActiveRecord::Schema.define(:version => 20111105132024) do
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20111103173717) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "name"
     t.string   "phone_number"
     t.string   "link"
     t.string   "email"

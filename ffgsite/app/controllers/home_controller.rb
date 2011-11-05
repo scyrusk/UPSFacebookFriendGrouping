@@ -83,9 +83,22 @@ class HomeController < ApplicationController
         d = DateTime.new(dateSplit[0].to_i,dateSplit[1].to_i,dateSplit[2].to_i)
         Rails::logger.debug d.to_s
         @posts = getPostsAtDate(@user, datePosts)
+        if(@posts.length == 0 )
+          redirect_to "/home/posted_on_fb?id=" << @user.link << ";date=" << params[:date] << ";type=p;uc=c", :method => "get"
+        end
         @renderPosts = true
       end
     end
+  end
+  
+  def forgot_posts
+    @user = User.find_by_link(params[:id])
+    datePosts = params[:date]
+  end
+  
+  def posted_on_fb
+    @user = User.find_by_link(params[:id])
+    datePosts = params[:date]
   end
 
   def getPostsAtDate( user, dateStr )
