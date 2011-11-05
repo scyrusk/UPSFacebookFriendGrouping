@@ -80,18 +80,18 @@ class HomeController < ApplicationController
           u.save
         end
         Rails::logger.debug 'Done creating new user'
+      else
+        Rails::logger.debug 'Creating new post...'
+        post = Post.new do |p|
+          p.sms_date = DateTime.now
+          p.sms_body = postParams[:body]
+          p.user = user
+          p.kind = "p"
+          p.completed = false
+          p.save
+        end
+        Rails::logger.debug 'Done creating new post'
       end
-      
-      Rails::logger.debug 'Creating new post...'
-      post = Post.new do |p|
-        p.sms_date = DateTime.now
-        p.sms_body = postParams[:body]
-        p.user = user
-        p.kind = "p"
-        p.completed = false
-        p.save
-      end
-      Rails::logger.debug 'Done creating new post'
     else
       Rails::logger.debug 'Accessing Twilio Response incorrectly'
     end
@@ -120,20 +120,20 @@ class HomeController < ApplicationController
           u.save
         end
         Rails::logger.debug 'Done...'
-      end
-      
-      post = Post.find(:first, :conditions => ["sms_body = ?", message.body])
-      if (post == nil)
-        Rails::logger.debug 'Creating new post...'
-        post = Post.new do |p|
-          p.sms_date = message.date_sent
-          p.sms_body = message.body
-          p.user = user
-          p.kind = "p"
-          p.completed = false
-          p.save
+      else # because first text message should have e-mail as body
+        post = Post.find(:first, :conditions => ["sms_body = ?", message.body])
+        if (post == nil)
+          Rails::logger.debug 'Creating new post...'
+          post = Post.new do |p|
+            p.sms_date = message.date_sent
+            p.sms_body = message.body
+            p.user = user
+            p.kind = "p"
+            p.completed = false
+            p.save
+          end
+          Rails::logger.debug 'Done...'
         end
-        Rails::logger.debug 'Done...'
       end
     end
   end
