@@ -1,7 +1,6 @@
 <% if @user != nil %> <!-- if we have an ID parameter that refers to a real user -->
-  Did you post anything at all on Facebook today?<br><br>
-  <%= link_to('Yes',"/posts?id=" << @user.link << ";date=" << params[:date] << ";type=p;uc=c", :method => "get") %>
+  That's alright! But, did you post anything at all on Facebook today?<br><br>
+  <%= link_to('Yes',"/posts?id=" << @user.link << ";date=" << params[:date] << ";type=np;uc=c", :method => "get") %>
   <%= link_to('No',"/posts?id=" << @user.link << ";date=" << params[:date] << ";type=nn;uc=c", :method => "get") %>
-
 <% end %>
 
