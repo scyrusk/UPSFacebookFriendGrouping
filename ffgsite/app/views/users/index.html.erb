@@ -1,9 +1,18 @@
-<h1>Users#index</h1>
-
   <h1>User List</h1>
   <p>List all messages from:</p>
-  <ul>
+  <table>
+    <tr>
+      <td>Participant</td>
+      <td># Completed</td>
+      <td>End of diary study</td>
+      <td>Scheduled ?</td>  
+    </tr>
     <% @users.each do |u| %>
-      <li><%= link_to  u.phone_number, edit_user_path(u) %> <br/></li> <!--u.phone_number, "/home?id=" << u.link-->
+      <tr>
+        <td><%= link_to  u.phone_number, edit_user_path(u) %> </td> <!--u.phone_number, "/home?id=" << u.link-->
+        <td>Insert number completed</td>
+        <td><%= u.doneparticipating %></td>
+        <td>Scheduled...</td>
+      </tr>
 	<% end %>
-</ul>
+  </table>

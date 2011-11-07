@@ -4,12 +4,12 @@
   <!-- if we have a valid date parameter with a list of posts to render -->
   <% if @renderPosts %> 
     <% if @posts.length > 0 %>
-      <p class="instructions">Select a message below to fill out the additional questionnaire...</p>
+      <p class="instructions">Please give us some additional information about each of the pieces of content you thought about sharing but decided not to post today.</p>
       <% @posts.each do |post| %>
         <%= 'Date:' << post.sms_date.to_s %> <br/>
         <%= 'Description:' << post.sms_body %> <br/>
-        <%= 'Completed:' << post.completed.to_s %> <br/>
-        <%= link_to 'Edit', "/posts?id=" << @user.link << ";postid=" << post.id.to_s << ";type=" << post.kind << ";uc=u" %><br/><hr/>
+        <%=  post.completed_text %> <br/>
+        <%= link_to post.edit_link_text, "/posts?id=" << @user.link << ";postid=" << post.id.to_s << ";type=" << post.kind << ";uc=u" %><br/><hr/>
       <% end %>
 
     <!-- if we have a valid date parameter but no posts to render -->

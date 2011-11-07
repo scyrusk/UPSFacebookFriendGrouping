@@ -26,4 +26,20 @@ class Post < ActiveRecord::Base
   def meaningful_nn
     (meaningful(self.nn1) && meaningful(self.nn2))
   end
+  
+  def completed_text
+    if completed 
+      'Completed' 
+    else 
+      'Not Completed' 
+    end
+  end
+  
+  def edit_link_text
+    if completed 
+      'Update' 
+    else 
+      'Complete' 
+    end
+  end
 end
