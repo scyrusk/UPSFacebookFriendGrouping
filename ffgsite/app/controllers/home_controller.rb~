@@ -28,7 +28,7 @@ class HomeController < ApplicationController
       if datePosts == nil
         Rails::logger.debug 'datePosts param is nil'
         dateStrings = @user.posts.map {|post| post.sms_date.strftime('%Y/%m/%d')}.uniq
-        dateStrings.sort! { |a,b| a <=> b }
+        dateStrings.sort! { |a,b| a <-> b }
         @dateLinks = {}
         dateStrings.each {|ds|
           datePosts = getPostsAtDate( @user, ds)
