@@ -14,8 +14,8 @@ class UsersController < ApplicationController
           numCompleted += 1
         end
         numTotal += 1
-        @userMap[u] = {:numComp => numCompleted, :numTot => numTotal } 
       end
+      @userMap[u] = {:numComp => numCompleted, :numTot => numTotal } 
     end
   end
 
