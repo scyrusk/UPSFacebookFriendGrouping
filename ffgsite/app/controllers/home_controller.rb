@@ -77,7 +77,7 @@ class HomeController < ApplicationController
           u.phone_number = postParams[:from]
           u.link = Digest::MD5.hexdigest(postParams[:from])
           u.email = postParams[:body]
-          u.doneparticipating = DateTime.now + (3600 * 24 * 8)
+          u.doneparticipating = DateTime.now + 8
           u.save
         end
         Rails::logger.debug 'Done creating new user'
@@ -117,7 +117,7 @@ class HomeController < ApplicationController
           u.phone_number = message.from
           u.link = Digest::MD5.hexdigest(message.from)
           u.email = message.body
-          u.doneparticipating = DateTime.now + (3600 * 24 * 8)
+          u.doneparticipating = DateTime.now + 8
           u.save
         end
         Rails::logger.debug 'Done...'
