@@ -4,6 +4,7 @@ require 'twilio-ruby'
 
 class HomeController < ApplicationController
   #before_filter :updateUsersPosts
+  protect_from_forgery :except => :twilioResponse
 
   def index
     # Hack...there may be a better way to do this but whatever
