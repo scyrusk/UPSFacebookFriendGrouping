@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'twilio-ruby'
-require 'Digest'
+#require 'Digest'
 
 class HomeController < ApplicationController
   before_filter :updateUsersPosts
