@@ -3,7 +3,7 @@ require 'twilio-ruby'
 #require 'Digest'
 
 class HomeController < ApplicationController
-  before_filter :updateUsersPosts
+  #before_filter :updateUsersPosts
 
   def index
     # Hack...there may be a better way to do this but whatever
@@ -68,33 +68,35 @@ class HomeController < ApplicationController
 
 
   def twilioResponse
-    if (params[:post] != nil)
-      postParams = params[:post]
-      user = User.find(:first, :conditions => ["phone_number = ?",postParams[:from]])
+    logger.info 'TwilioResponse entered'
+
+    if (params[:From] != nil)
+      logger.info 'From: ' + params[:From] + ';Body: ' + params[:Body]
+      user = User.find(:first, :conditions => ["phone_number = ?",params[:From]])
       if (user == nil)
-        Rails::logger.debug 'Creating new user...'
+        logger.info 'Creating new user...'
         user = User.new do |u|
-          u.phone_number = postParams[:from]
-          u.link = Digest::MD5.hexdigest(postParams[:from])
-          u.email = postParams[:body]
-          u.doneparticipating = DateTime.now + 8
+          u.phone_number = params[:From]
+          u.link = Digest::MD5.hexdigest(params[:From])
+          u.email = params[:Body]
+          u.doneparticipating = DateTime.now + (3600 * 24 * 8)
           u.save
         end
-        Rails::logger.debug 'Done creating new user'
+        logger.info 'Done creating new user'
       else
-        Rails::logger.debug 'Creating new post...'
+        logger.info 'Creating new post...'
         post = Post.new do |p|
           p.sms_date = DateTime.now
-          p.sms_body = postParams[:body]
+          p.sms_body = params[:Body]
           p.user = user
           p.kind = "p"
           p.completed = false
           p.save
         end
-        Rails::logger.debug 'Done creating new post'
+        logger.info 'Done creating new post'
       end
     else
-      Rails::logger.debug 'Accessing Twilio Response incorrectly'
+      logger.info 'Accessing Twilio Response incorrectly'
     end
   end
 
