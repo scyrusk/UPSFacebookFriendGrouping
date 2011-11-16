@@ -69,6 +69,7 @@ class HomeController < ApplicationController
 
 
   def twilioResponse
+    #response 0 = nothing special, 1 = still need email, 2 = existing user gave us email, 3 = new user signed up correctly
     logger.info 'TwilioResponse entered'
 
     if (params[:From] != nil)
@@ -79,29 +80,54 @@ class HomeController < ApplicationController
         user = User.new do |u|
           u.phone_number = params[:From]
           u.link = Digest::MD5.hexdigest(params[:From])
-          u.email = params[:Body]
+          if (params[:Body] =~ /.\+@.\+\..\+/)
+            @response = 3
+            u.email = params[:Body]
+          else
+            @response = 1
+          end
           u.doneparticipating = DateTime.now + (3600 * 24 * 8)
           u.save
         end
+
+        if @response = 1 #need to also create a post
+          createPost(DateTime.now, params[:Body], user, "p", false)
+        end
         logger.info 'Done creating new user'
       else
-        logger.info 'Creating new post...'
-        post = Post.new do |p|
-          p.sms_date = DateTime.now
-          p.sms_body = params[:Body]
-          p.user = user
-          p.kind = "p"
-          p.completed = false
-          p.save
+        if user.email == nil || user.email == ''
+          if (params[:Body] =~ /.\+@.\+\..\+/)
+            user.email = params[:Body]
+            @response = 2
+          else
+            createPost(DateTime.now, params[:Body], user, "p", false)
+            @response = 1
+          end
+        else
+          createPost(DateTime.now, params[:Body], user, "p", false)
+          @response = 0
         end
-        logger.info 'Done creating new post'
       end
     else
+      @response = 0
       logger.info 'Accessing Twilio Response incorrectly'
     end
   end
 
   protected
+  
+  def createPost(date, body, user, kind, completed)
+    logger.info 'Creating new post...'
+    post = Post.new do |p|
+      p.sms_date = date
+      p.sms_body = body
+      p.user = user
+      p.kind = kind
+      p.completed = completed
+      p.save
+    end
+    logger.info 'Done creating new post'
+  end
 
   def updateUsersPosts
     account_sid = 'AC0bb1fd0388354f33b14da8ad86289a4f'

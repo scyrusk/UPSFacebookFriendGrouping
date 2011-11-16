@@ -1,2 +1,16 @@
 <Response>
+  <% if @response == 1 %>
+    <Sms>
+      Thanks for the post! But we still need your e-mail address. Please respond to us with just your email (e.g. bovik@cmu.edu)
+    </Sms>
+  <% elsif @response == 2 %>
+    <Sms>
+      Thanks for giving us your e-mail! This should be the last text we send you.
+    </Sms>
+  <% elsif @response == 3 %>
+    <Sms>
+      Welcome to the Facebook Friend Grouping study, and thanks for your e-mail address! This should be the only text your receive from us.
+    </Sms>
+  <% elsif @response == 0 %>
+  <% end  %>
 </Response>
