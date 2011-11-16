@@ -49,7 +49,7 @@ class HomeController < ApplicationController
         Rails::logger.debug d.to_s
         @posts = getPostsAtDate(@user, datePosts)
         if(@posts.length == 0 )
-          redirect_to "/home/forgot_posts?id=" << @user.link << ";date=" << params[:date], :method => "get"
+          redirect_to  home_path << "/forgot_posts?id=" << @user.link << ";date=" << params[:date], :method => "get"
         end
         @renderPosts = true
       end
