@@ -10,12 +10,12 @@ class UsersController < ApplicationController
       dateStrings.sort! { |a,b| a <=> b }
       dateStrings.each do |ds|
         datePosts = u.getPostsAtDate(ds)
-        if (datePosts.length > 0 && datePosts.all? {|p| p.completed})
+        if (datePosts.length > 0 && datePosts.all {|p| p.completed})
           numCompleted += 1
         end
         numTotal += 1
+        @userMap[u] = {:numComp => numCompleted, :numTot => numTotal } 
       end
-      @userMap[u] = {:numComp => numCompleted, :numTot => numTotal } 
     end
   end
 

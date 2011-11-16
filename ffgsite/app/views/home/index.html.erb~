@@ -26,9 +26,8 @@
         <td>Date</td>
         <td>Completed?</td>
       </tr>
-      <% @keyset = @dateLinks.keys.sort! {|a,b| a <=> b } %>
-      <% @keyset.each do |key| %>
-        <tr> <td> <%= link_to key, "/home?id=" << @user.link << ";date=" << key %></td><td><%= @dateLinks[key].to_s %></td></tr>
+      <% @dateLinks.each do |ds,comp| %>
+        <tr> <td> <%= link_to ds, "/home?id=" << @user.link << ";date=" << ds %></td><td><%= comp.to_s %></td></tr>
       <% end %>
     </table>
   <% end %>
