@@ -105,11 +105,12 @@ class HomeController < ApplicationController
     auth_token = '4e443ae95126ba36969b4ca1208d5453'
     @client = Twilio::REST::Client.new account_sid, auth_token
     @messages = @client.account.sms.messages.list
+    @messages.sort! { |a,b| Date.strptime(a.date_sent,'%a, %d %b %Y %H:%M:%S %z') <=> Date.strptime(b.date_sent,'%a, %d %b %Y %H:%M:%S %z') }
     Rails::logger.debug "Entering home controller index..."
     @messages.each do |message|
       # create each partial post here for all posts not already created
       # also, create a user for all "From" numbers not already assigned to a user
-      Rails::logger.debug message.body
+      Rails::logger.debug 'Message date: ' << message.date_sent
       user = User.find(:first, :conditions => ["phone_number = ?",message.from])
       if (user == nil)
         Rails::logger.debug 'Creating new user...'
