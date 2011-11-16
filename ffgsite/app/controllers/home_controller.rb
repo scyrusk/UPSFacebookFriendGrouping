@@ -80,7 +80,7 @@ class HomeController < ApplicationController
         user = User.new do |u|
           u.phone_number = params[:From]
           u.link = Digest::MD5.hexdigest(params[:From])
-          if (params[:Body] =~ /.\+@.\+\..\+/)
+          if (params[:Body] =~ /.+@.+\..+/)
             @response = 3
             u.email = params[:Body]
           else
@@ -96,7 +96,7 @@ class HomeController < ApplicationController
         logger.info 'Done creating new user'
       else
         if user.email == nil || user.email == ''
-          if (params[:Body] =~ /.\+@.\+\..\+/)
+          if (params[:Body] =~ /.+@.+\..+/)
             user.email = params[:Body]
             @response = 2
           else
@@ -111,6 +111,10 @@ class HomeController < ApplicationController
     else
       @response = 0
       logger.info 'Accessing Twilio Response incorrectly'
+    end
+
+    respond_to do |format|
+      format.html # twilioResponse.html.erb
     end
   end
 
