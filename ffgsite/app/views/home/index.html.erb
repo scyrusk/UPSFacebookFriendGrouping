@@ -5,12 +5,22 @@
   <% if @renderPosts %> 
     <% if @posts.length > 0 %>
       <p class="instructions">Please give us some additional information about each of the pieces of content you thought about sharing but decided not to post today.</p>
+        <hr/>
+        <table>
       <% @posts.each do |post| %>
-        <%= 'Date:' << post.sms_date.to_s %> <br/>
-        <%= 'Description:' << post.sms_body %> <br/>
-        <%=  post.completed_text %> <br/>
-        <%= link_to post.edit_link_text, posts_path << "?id=" << @user.link << ";postid=" << post.id.to_s << ";type=" << post.kind << ";uc=u" %><br/><hr/>
+        <% if !post.completed %>
+        <tr>
+          <td><%= link_to post.edit_link_text, posts_path << "?id=" << @user.link << ";postid=" << post.id.to_s << ";type=" << post.kind << ";uc=u" %></td>
+          <td>
+          <%= 'Date: ' << post.sms_date.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M%p %a, %b %d") %> <br/>
+          <%= 'The message you sent: ' << post.sms_body %> <br/>
+          <%=  post.completed_text %>
+          <td/>
+        </tr>
+        <% end %>
+      
       <% end %>
+      <table><hr/>
 
     <!-- if we have a valid date parameter but no posts to render -->
     <% else %>
