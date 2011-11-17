@@ -86,7 +86,7 @@ class HomeController < ApplicationController
           else
             @response = 1
           end
-          u.doneparticipating = DateTime.now + (3600 * 24 * 8)
+          u.doneparticipating = DateTime.now + 8
           u.save
         end
 
