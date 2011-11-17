@@ -86,7 +86,7 @@ class HomeController < ApplicationController
           else
             @response = 1
           end
-          u.doneparticipating = DateTime.now + (3600 * 24 * 8)
+          u.doneparticipating = DateTime.now + 8
           u.save
         end
 
@@ -98,6 +98,7 @@ class HomeController < ApplicationController
         if user.email == nil || user.email == ''
           if (params[:Body] =~ /.+@.+\..+/)
             user.email = params[:Body]
+            user.save
             @response = 2
           else
             createPost(DateTime.now, params[:Body], user, "p", false)
@@ -113,8 +114,14 @@ class HomeController < ApplicationController
       logger.info 'Accessing Twilio Response incorrectly'
     end
 
-    respond_to do |format|
-      format.html # twilioResponse.html.erb
+    if @response == 3
+      render :xml => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Sms>Welcome to teh Facebook Friend Grouping study! Thanks for sending us your e-mail address, we will send you nightly reminders at this address to complete a short survey for the duration of the study.This should be the last text you get from us.</Sms></Response>"
+    elsif @response == 2
+      render :xml => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Sms>Thanks for giving us your e-mail address! We will send you nightly reminders at this address to complete a short survey for the duration of the study.This should be the last text you get from us.</Sms></Response>"
+    elsif @response == 1
+      render :xml => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Sms>Thanks for the post! But we still need your e-mail address. Please respond to us with just your email (e.g. bovik@cmu.edu)</Sms></Response>"
+    elsif @response == 0
+      render :xml => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response></Response>"
     end
   end
 
