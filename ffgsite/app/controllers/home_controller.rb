@@ -84,13 +84,13 @@ class HomeController < ApplicationController
             @response = 3
             u.email = params[:Body]
           else
-            @response = 1
+            @response = 4
           end
           u.doneparticipating = DateTime.now + 8
           u.save
         end
 
-        if @response = 1 #need to also create a post
+        if @response = 4 #need to also create a post
           createPost(DateTime.now, params[:Body], user, "p", false)
         end
         logger.info 'Done creating new user'
@@ -113,11 +113,13 @@ class HomeController < ApplicationController
       @response = 0
       logger.info 'Accessing Twilio Response incorrectly'
     end
-
-    if @response == 3
-      render :xml => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Sms>Welcome to teh Facebook Friend Grouping study! Thanks for sending us your e-mail address, we will send you nightly reminders at this address to complete a short survey for the duration of the study.This should be the last text you get from us.</Sms></Response>"
+    
+    if @response == 4
+      render :xml => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Sms>Welcome to the Facebook Friend Grouping study! It seems that you didn't send us your email. Please respond with just your email address (e.g. bovik@cmu.edu)</Sms></Response>"
+    elsif @response == 3
+      render :xml => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Sms>Welcome to the Facebook Friend Grouping study! We will send you nightly reminders at this email address to complete a short survey for the duration of the study.</Sms></Response>"
     elsif @response == 2
-      render :xml => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Sms>Thanks for giving us your e-mail address! We will send you nightly reminders at this address to complete a short survey for the duration of the study.This should be the last text you get from us.</Sms></Response>"
+      render :xml => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Sms>Thanks for giving us your e-mail address! We will send you nightly reminders at this address to complete a short survey for the duration of the study.</Sms></Response>"
     elsif @response == 1
       render :xml => "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Response><Sms>Thanks for the post! But we still need your e-mail address. Please respond to us with just your email (e.g. bovik@cmu.edu)</Sms></Response>"
     elsif @response == 0
