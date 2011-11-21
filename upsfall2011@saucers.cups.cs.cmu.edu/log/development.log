@@ -1,0 +1,656 @@
+
+
+Processing HomeController#index (for ::1 at 2011-11-16 16:58:01) [GET]
+
+NameError (undefined local variable or method `a' for #<HomeController:0x10ac00368>):
+  app/controllers/home_controller.rb:108:in `updateUsersPosts'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.3ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for ::1 at 2011-11-16 16:58:16) [GET]
+Entering home controller index...
+Message date: Wed, 26 Oct 2011 15:38:43 +0000
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+13303603395') LIMIT 1[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Test') LIMIT 1[0m
+Message date: Wed, 26 Oct 2011 15:38:45 +0000
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Wed, 26 Oct 2011 15:45:39 +0000
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14155992671') LIMIT 1[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Wed, 26 Oct 2011 15:45:41 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14155992671') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Wed, 26 Oct 2011 15:46:57 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Wed, 26 Oct 2011 15:46:57 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:23:53 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+13303603395') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Test') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:11:41 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:12:47 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+13303603395') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Test') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:12:49 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:20:16 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:20:16 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:11:41 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:23:54 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:24:52 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:24:54 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:25:46 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 16:25:52 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 20:14:58 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 20:14:59 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 20:15:48 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+13303603395') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Test') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 20:15:52 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 20:18:07 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 20:18:07 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'This is a test message!') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 20:19:23 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Thu, 27 Oct 2011 20:19:20 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+13303603395') LIMIT 1[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Test
+') LIMIT 1[0m
+Message date: Fri, 28 Oct 2011 02:07:55 +0000
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+16789781547') LIMIT 1[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'What it does') LIMIT 1[0m
+Message date: Fri, 28 Oct 2011 02:07:57 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Fri, 28 Oct 2011 05:00:15 +0000
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+16787937399') LIMIT 1[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'test') LIMIT 1[0m
+Message date: Fri, 28 Oct 2011 05:01:00 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Fri, 28 Oct 2011 05:00:59 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+16787937399') LIMIT 1[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'oh yeah') LIMIT 1[0m
+Message date: Fri, 28 Oct 2011 05:00:16 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Tue, 01 Nov 2011 22:33:31 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Tue, 01 Nov 2011 22:33:30 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+16789781547') LIMIT 1[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Ready set go') LIMIT 1[0m
+Message date: Wed, 02 Nov 2011 17:49:36 +0000
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+19199950334') LIMIT 1[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'I almost fell asleep during my own lecture') LIMIT 1[0m
+Message date: Wed, 02 Nov 2011 17:49:37 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Fri, 04 Nov 2011 20:32:35 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+19199950334') LIMIT 1[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'I got to campus at 7 am') LIMIT 1[0m
+Message date: Fri, 04 Nov 2011 20:32:36 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Fri, 04 Nov 2011 21:09:25 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Fri, 04 Nov 2011 21:09:24 +0000
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+12074152677') LIMIT 1[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'manya.sleeper@gmail.com') LIMIT 1[0m
+Message date: Sat, 05 Nov 2011 19:21:19 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+16789781547') LIMIT 1[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Try again') LIMIT 1[0m
+Message date: Sat, 05 Nov 2011 19:21:20 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Sat, 05 Nov 2011 19:34:31 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+16789781547') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Test') LIMIT 1[0m
+Message date: Sat, 05 Nov 2011 19:38:01 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+16789781547') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Test') LIMIT 1[0m
+Message date: Sat, 05 Nov 2011 19:38:02 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Sat, 05 Nov 2011 19:41:01 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+16789781547') LIMIT 1[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Test for justice') LIMIT 1[0m
+Message date: Sat, 05 Nov 2011 19:38:26 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+Message date: Sat, 05 Nov 2011 19:38:25 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+16789781547') LIMIT 1[0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Another test') LIMIT 1[0m
+Message date: Tue, 15 Nov 2011 20:13:28 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+19199950334') LIMIT 1[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'wiese@cmu.edu') LIMIT 1[0m
+Message date: Tue, 15 Nov 2011 20:13:29 +0000
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (phone_number = '+14123574034') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_body = 'Welcome to Twilio SMS. Configure your number''s SMS URL to change this message.
+Reply HELP for help.
+Reply STOP to unsubscribe.
+Msg&Data rates may apply.') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+@userID param is nil
+Redirected to http://localhost:3000/users
+Completed in 559ms (DB: 3) | 302 Found [http://localhost/home]
+
+
+Processing UsersController#index (for ::1 at 2011-11-16 16:58:16) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-02 00:00:00' AND sms_date < '2011-11-03 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-12 00:00:00' AND sms_date < '2011-11-13 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-13 00:00:00' AND sms_date < '2011-11-14 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-14 00:00:00' AND sms_date < '2011-11-15 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-15 00:00:00' AND sms_date < '2011-11-16 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-01 00:00:00' AND sms_date < '2011-11-02 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 4) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 5) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 5) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 6) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 6) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 7) [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 114ms (View: 8, DB: 5) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for ::1 at 2011-11-17 11:52:18) [GET]
+
+SyntaxError (/Users/sauvikd/UPSFacebookFriendGrouping/ffgsite/app/controllers/home_controller.rb:118: syntax error, unexpected tIDENTIFIER, expecting kEND
+      render :file home_path + '/respNewUser.xml'
+                            ^
+/Users/sauvikd/UPSFacebookFriendGrouping/ffgsite/app/controllers/home_controller.rb:120: syntax error, unexpected tIDENTIFIER, expecting kEND
+      render :file home_path + '/respEmailRec.xml'
+                            ^
+/Users/sauvikd/UPSFacebookFriendGrouping/ffgsite/app/controllers/home_controller.rb:122: syntax error, unexpected tIDENTIFIER, expecting kEND
+      render :file home_path + '/respNeedMailRec.xml'
+                            ^
+/Users/sauvikd/UPSFacebookFriendGrouping/ffgsite/app/controllers/home_controller.rb:124: syntax error, unexpected tSTRING_BEG, expecting kEND
+      render :text "<Response></Response>
+                    ^
+/Users/sauvikd/UPSFacebookFriendGrouping/ffgsite/app/controllers/home_controller.rb:149: syntax error, unexpected tCONSTANT, expecting kEND
+    Rails::logger.debug "Entering home controller index..."
+                                 ^
+/Users/sauvikd/UPSFacebookFriendGrouping/ffgsite/app/controllers/home_controller.rb:152: syntax error, unexpected tCONSTANT, expecting kEND
+...o, create a user for all "From" numbers not already assigned...
+                              ^
+/Users/sauvikd/UPSFacebookFriendGrouping/ffgsite/app/controllers/home_controller.rb:154: syntax error, unexpected tIDENTIFIER, expecting kEND
+... :conditions => ["phone_number = ?",message.from])
+                              ^
+/Users/sauvikd/UPSFacebookFriendGrouping/ffgsite/app/controllers/home_controller.rb:154: syntax error, unexpected ']', expecting kEND
+...hone_number = ?",message.from])
+                              ^):
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (382.0ms)
+Rendered rescues/_request_and_response (47.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#index (for ::1 at 2011-11-17 11:53:54) [GET]
+  [4;35;1mUser Load (14.0ms)[0m   [0mSELECT * FROM "users" [0m
+@userID param is nil
+Redirected to http://localhost:3000/users
+Completed in 29ms (DB: 14) | 302 Found [http://localhost/home]
+
+
+Processing UsersController#index (for ::1 at 2011-11-17 11:53:54) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mPost Load (1.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-02 00:00:00' AND sms_date < '2011-11-03 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-15 00:00:00' AND sms_date < '2011-11-16 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-01 00:00:00' AND sms_date < '2011-11-02 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-16 00:00:00' AND sms_date < '2011-11-17 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 4) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 5) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 5) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 6) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 6) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 7) [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 88ms (View: 25, DB: 6) | 200 OK [http://localhost/users]
+
+
+Processing HomeController#twilioResponse (for ::1 at 2011-11-17 11:54:59) [GET]
+TwilioResponse entered
+Accessing Twilio Response incorrectly
+Completed in 41ms (View: 40, DB: 0) | 200 OK [http://localhost/home/twilioResponse]
+
+
+Processing HomeController#twilioResponse (for ::1 at 2011-11-17 11:55:30) [GET]
+TwilioResponse entered
+Accessing Twilio Response incorrectly
+Rendering /respNeedMailRec.xml
+
+ActionView::MissingTemplate (Missing template /respNeedMailRec.xml in view path app/views):
+  app/controllers/home_controller.rb:124:in `twilioResponse'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#twilioResponse (for 127.0.0.1 at 2011-11-17 11:57:19) [GET]
+TwilioResponse entered
+Accessing Twilio Response incorrectly
+Rendering http://localhost:3000//respNeedMailRec.xml
+
+ActionView::MissingTemplate (Missing template http://localhost:3000//respNeedMailRec.xml in view path app/views):
+  app/controllers/home_controller.rb:124:in `twilioResponse'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#twilioResponse (for 127.0.0.1 at 2011-11-17 11:57:27) [GET]
+TwilioResponse entered
+Accessing Twilio Response incorrectly
+Rendering http://localhost:3000/respNeedMailRec.xml
+
+ActionView::MissingTemplate (Missing template http://localhost:3000/respNeedMailRec.xml in view path app/views):
+  app/controllers/home_controller.rb:124:in `twilioResponse'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#twilioResponse (for 127.0.0.1 at 2011-11-17 11:58:05) [GET]
+TwilioResponse entered
+Accessing Twilio Response incorrectly
+Rendering http://localhost:3000/respNeedMailRec.xml
+
+ActionView::MissingTemplate (Missing template http://localhost:3000/respNeedMailRec.xml in view path app/views):
+  app/controllers/home_controller.rb:124:in `twilioResponse'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing HomeController#twilioResponse (for 127.0.0.1 at 2011-11-17 11:59:37) [GET]
+TwilioResponse entered
+Accessing Twilio Response incorrectly
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://localhost/home/twilioResponse]
+
+
+Processing HomeController#twilioResponse (for 127.0.0.1 at 2011-11-17 12:01:02) [GET]
+TwilioResponse entered
+Accessing Twilio Response incorrectly
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://localhost/home/twilioResponse]
+
+
+Processing HomeController#twilioResponse (for 127.0.0.1 at 2011-11-17 12:05:47) [GET]
+TwilioResponse entered
+Accessing Twilio Response incorrectly
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://localhost/home/twilioResponse]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:35:58) [GET]
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+@userID param is nil
+Redirected to http://localhost:3000/users
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/home]
+
+
+Processing UsersController#index (for ::1 at 2011-11-20 22:35:58) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-02 00:00:00' AND sms_date < '2011-11-03 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-15 00:00:00' AND sms_date < '2011-11-16 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.5ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-01 00:00:00' AND sms_date < '2011-11-02 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-16 00:00:00' AND sms_date < '2011-11-17 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 4) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 5) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 5) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 6) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 6) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 7) [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 152ms (View: 10, DB: 5) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#edit (for ::1 at 2011-11-20 22:36:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/edit
+Rendered users/_form (13.4ms)
+Completed in 73ms (View: 69, DB: 0) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:36:05) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is nil
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 32ms (View: 20, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:36:09) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19", "date"=>"2011/10/27"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is 2011/10/27
+2011-10-27T00:00:00+00:00
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 36ms (View: 27, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19;date=2011/10/27]
+
+
+Processing PostsController#index (for ::1 at 2011-11-20 22:36:13) [GET]
+  Parameters: {"uc"=>"u", "id"=>"d98990b695b3d0ac3a8dd37a3d74be19", "type"=>"p", "postid"=>"10"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering posts/index
+Rendered posts/_form (3.8ms)
+Completed in 226ms (View: 217, DB: 0) | 200 OK [http://localhost/posts?id=d98990b695b3d0ac3a8dd37a3d74be19;postid=10;type=p;uc=u]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:36:24) [PUT]
+  Parameters: {"commit"=>"Update", "post"=>{"p1"=>"test", "p2"=>"test", "sms_date"=>"2011-10-27 20:18:07", "p3"=>"test", "p4"=>"test", "p5"=>"test", "long_description"=>"test", "sms_body"=>"This is a test message!"}, "uc"=>"u", "authenticity_token"=>"+MxItD52a5a4IRQNgcG8byaqU2A9ZnePgHeci4WaSBY=", "id"=>"d98990b695b3d0ac3a8dd37a3d74be19", "date"=>"2011/10/27", "postid"=>"10"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = 10) [0m
+WARNING: Can't mass-assign these protected attributes: sms_date
+  [4;35;1mPost Update (0.3ms)[0m   [0mUPDATE "posts" SET "long_description" = 'test', "updated_at" = '2011-11-21 03:36:24', "p1" = 'test', "p5" = 'test', "p4" = 'test', "p3" = 'test', "p2" = 'test' WHERE "id" = 10[0m
+Update post parameter:This is a test message!
+  [4;36;1mPost Update (0.2ms)[0m   [0;1mUPDATE "posts" SET "updated_at" = '2011-11-21 03:36:24', "completed" = 't' WHERE "id" = 10[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is 2011/10/27
+2011-10-27T00:00:00+00:00
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 57ms (View: 2, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19;date=2011/10/27;postid=10;uc=u]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:36:39) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is nil
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 16ms (View: 2, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:39:44) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is nil
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 18ms (View: 5, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:39:46) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19", "date"=>"2011/10/27"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is 2011/10/27
+2011-10-27T00:00:00+00:00
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19;date=2011/10/27]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:40:33) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19", "date"=>"2011/10/27"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is 2011/10/27
+2011-10-27T00:00:00+00:00
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19;date=2011/10/27]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:41:25) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19", "date"=>"2011/10/27"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is 2011/10/27
+2011-10-27T00:00:00+00:00
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 17ms (View: 7, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19;date=2011/10/27]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:41:28) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is nil
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 15ms (View: 2, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:41:30) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19", "date"=>"2011/10/27"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is 2011/10/27
+2011-10-27T00:00:00+00:00
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 13ms (View: 4, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19;date=2011/10/27]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:41:33) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is nil
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 15ms (View: 2, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19]
+
+
+Processing HomeController#index (for ::1 at 2011-11-20 22:41:34) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19", "date"=>"2011/11/05"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+@userID param is d98990b695b3d0ac3a8dd37a3d74be19
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+datePosts param is 2011/11/05
+2011-11-05T00:00:00+00:00
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering home/index
+Completed in 15ms (View: 5, DB: 1) | 200 OK [http://localhost/home?id=d98990b695b3d0ac3a8dd37a3d74be19;date=2011/11/05]

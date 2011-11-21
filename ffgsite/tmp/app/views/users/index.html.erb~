@@ -1,0 +1,20 @@
+  <h1>User List</h1>
+  <p>List all messages from:</p>
+  <table>
+    <tr>
+      <td>Participant</td>
+      <td># Completed</td>
+      <td>$ Total</td>
+      <td>End of diary study</td>
+      <td>Scheduled ?</td>  
+    </tr>
+    <% @users.each do |u| %>
+      <tr>
+        <td><%= link_to  u.phone_number, edit_user_path(u) %> </td> <!--u.phone_number, "/home?id=" << u.link-->
+        <td><%= @userMap[u][:numComp] %></td>
+        <td><%= @userMap[u][:numTot] %></td>
+        <td><%= u.doneparticipating %></td>
+        <td>Scheduled...</td>
+      </tr>
+	<% end %>
+  </table>

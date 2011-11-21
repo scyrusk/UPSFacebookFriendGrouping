@@ -1,0 +1,39 @@
+<% form_for @post, :url => @link do |f| %>
+	<%= f.error_messages %>
+  
+  <div class="span-4">
+    <%= f.label :sms_date %>
+	</div>
+	<div class="span-14 last">
+    <%= f.text_field :sms_date, :class => "text", :disabled => "disabled" %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label 'Description' %>
+	</div>
+	<div class="span-14 last">
+		<%= f.text_area :sms_body, :style => "height:200px;" %>
+	</div>
+	<hr class="space" />
+
+	<div class="span-4">
+		<%= f.label :nn1, 'Why didn\'t you post anything to Facebook today?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= f.text_area :nn1, :style => "height:400px;" %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label :nn2, 'Why didn\'t you think about posting anything to Facebook today?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= f.text_area :nn2, :style => "height:400px;" %>
+	</div>
+	<hr class="space" />
+
+	<div class="prepend-4 span-14 last">
+	    <%= f.submit(@post.new_record? ? 'Create' : 'Update', :class => "submit") %>
+	</div>
+<% end %>

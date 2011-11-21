@@ -1,0 +1,6 @@
+<% if @user != nil %> <!-- if we have an ID parameter that refers to a real user -->
+  Hmmm...it looks like you didn't text us anything today. Did you forget to submit a text message today with something that you thought about sharing with your friends but did not post on Facebook?<br><br>
+  <%= link_to('Yes', posts_path << "?id=" << @user.link << ";date=" << params[:date] << ";type=p;uc=c", :method => "get") %>
+  <%= link_to('No', home_path << "/posted_on_fb?id=" << @user.link << ";date=" << params[:date], :method => "get") %>
+<% end %>
+
