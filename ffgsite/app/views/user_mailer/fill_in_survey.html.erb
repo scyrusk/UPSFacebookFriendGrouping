@@ -6,8 +6,8 @@
   <body>
 	Hello<br><br>
 
-	It's time to fill in your nightly survey for the Facebook posting study that you have been participating in. Follow the link at: <%= link_to "today's posts",  root_url << "home?id=" << @user.link << ";date=" << @yesterday.strftime('%Y/%m/%d') %> to complete this survey.<br><br>
+	It's time to fill in your nightly survey for the Facebook posting study that you have been participating in. Follow the link at: <%= link_to "today's posts",  root_url << "home?id=" << @user.link << ";date=" << @yesterday.strftime('%Y/%m/%d'), {:host => 'saucers.cups.cs.cmu.edu', :only_path => false}  %> to complete this survey.<br><br>
 	
-	You can also view all of your posts for the study on this page: <%= link_to "all posts", root_url << "home?id=" << @user.link %>
+	You can also view all of your posts for the study on this page: <%= link_to "all posts", root_url << "home?id=" << @user.link, {:host => 'saucers.cups.cs.cmu.edu', :only_path => false}  %>
   </body>
 </html>

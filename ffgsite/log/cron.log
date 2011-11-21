@@ -1,0 +1,1 @@
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/runner.rb:48: Missing host to link to! Please provide :host parameter or set default_url_options[:host] (ActionView::TemplateError)

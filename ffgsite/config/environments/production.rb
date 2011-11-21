@@ -29,3 +29,5 @@ config.action_mailer.raise_delivery_errors = true
 
 # set delivery method to :smtp, :sendmail or :test
 config.action_mailer.delivery_method = :sendmail
+
+config.action_mailer.default_url_options = { :host => 'saucers.cups.cs.cmu.edu/fallproject' }

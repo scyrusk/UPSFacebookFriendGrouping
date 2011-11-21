@@ -927,3 +927,164 @@ Processing HomeController#index (for 172.31.53.21 at 2011-11-20 21:08:20) [PUT]
 Rendering template within layouts/application
 Rendering home/index
 Completed in 22ms (View: 2, DB: 2) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/home?id=68cf9e4c963b5adae77cd6851442a4d2;date=2011/11/17;postid=2;uc=u]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-20 22:45:07) [GET]
+Redirected to http://saucers.cups.cs.cmu.edu/fallproject/users
+Completed in 5ms (DB: 1) | 302 Found [http://saucers.cups.cs.cmu.edu/fallproject/home]
+
+
+Processing UsersController#index (for 74.94.200.129 at 2011-11-20 22:45:09) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 781ms (View: 6, DB: 4) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/users]
+
+
+Processing UsersController#edit (for 74.94.200.129 at 2011-11-20 22:45:14) [GET]
+  Parameters: {"id"=>"1"}
+Rendering template within layouts/application
+Rendering users/edit
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/users/1/edit]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-20 22:45:15) [GET]
+  Parameters: {"id"=>"1157fb24921249c141ed1e9279858dd7"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 13ms (View: 5, DB: 2) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/home?id=1157fb24921249c141ed1e9279858dd7]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-20 22:45:17) [GET]
+  Parameters: {"id"=>"1157fb24921249c141ed1e9279858dd7", "date"=>"2011/11/17"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 128ms (View: 121, DB: 1) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/home?id=1157fb24921249c141ed1e9279858dd7;date=2011/11/17]
+
+
+Processing PostsController#index (for 74.94.200.129 at 2011-11-20 22:45:19) [GET]
+  Parameters: {"uc"=>"u", "id"=>"1157fb24921249c141ed1e9279858dd7", "type"=>"p", "postid"=>"1"}
+Rendering template within layouts/application
+Rendering posts/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/posts?id=1157fb24921249c141ed1e9279858dd7;postid=1;type=p;uc=u]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-20 22:45:25) [PUT]
+  Parameters: {"commit"=>"Update", "post"=>{"p1"=>"why not?", "p2"=>"test", "sms_date"=>"2011-11-17 17:24:27", "p3"=>"test", "p4"=>"test", "p5"=>"test", "long_description"=>"asdasdasad", "sms_body"=>"Hello"}, "uc"=>"u", "authenticity_token"=>"dlaksGUeWd+SI5ERw4wgBf4vYAIVI4w2q4dANiaZZns=", "id"=>"1157fb24921249c141ed1e9279858dd7", "date"=>"2011/11/17", "postid"=>"1"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 24ms (View: 2, DB: 3) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/home?id=1157fb24921249c141ed1e9279858dd7;date=2011/11/17;postid=1;uc=u]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-20 23:02:08) [GET]
+Redirected to http://saucers.cups.cs.cmu.edu/fallproject/users
+Completed in 5ms (DB: 1) | 302 Found [http://saucers.cups.cs.cmu.edu/fallproject/home]
+
+
+Processing UsersController#index (for 74.94.200.129 at 2011-11-20 23:02:08) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 779ms (View: 6, DB: 4) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/users]
+
+
+Processing UsersController#edit (for 74.94.200.129 at 2011-11-20 23:02:13) [GET]
+  Parameters: {"id"=>"2"}
+Rendering template within layouts/application
+Rendering users/edit
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/users/2/edit]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-20 23:02:16) [GET]
+  Parameters: {"id"=>"68cf9e4c963b5adae77cd6851442a4d2"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 23ms (View: 5, DB: 3) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/home?id=68cf9e4c963b5adae77cd6851442a4d2]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-20 23:02:19) [GET]
+  Parameters: {"id"=>"68cf9e4c963b5adae77cd6851442a4d2", "date"=>"2011/11/19"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/home?id=68cf9e4c963b5adae77cd6851442a4d2;date=2011/11/19]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-20 23:03:11) [GET]
+  Parameters: {"id"=>"68cf9e4c963b5adae77cd6851442a4d2", "date"=>"2011/11/17"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/home?id=68cf9e4c963b5adae77cd6851442a4d2;date=2011/11/17]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-20 23:03:14) [GET]
+  Parameters: {"id"=>"68cf9e4c963b5adae77cd6851442a4d2", "date"=>"2011/11/18"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 131ms (View: 125, DB: 1) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/home?id=68cf9e4c963b5adae77cd6851442a4d2;date=2011/11/18]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-21 00:05:25) [GET]
+Redirected to http://saucers.cups.cs.cmu.edu/fallproject/users
+Completed in 5ms (DB: 1) | 302 Found [http://saucers.cups.cs.cmu.edu/fallproject/home]
+
+
+Processing UsersController#index (for 74.94.200.129 at 2011-11-21 00:05:25) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 782ms (View: 6, DB: 4) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/users]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-21 01:02:05) [GET]
+Redirected to http://saucers.cups.cs.cmu.edu/fallproject/users
+Completed in 5ms (DB: 1) | 302 Found [http://saucers.cups.cs.cmu.edu/fallproject/home]
+
+
+Processing UsersController#index (for 74.94.200.129 at 2011-11-21 01:02:06) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 774ms (View: 6, DB: 4) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/users]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-21 14:05:07) [GET]
+Redirected to http://saucers.cups.cs.cmu.edu/fallproject/users
+Completed in 5ms (DB: 1) | 302 Found [http://saucers.cups.cs.cmu.edu/fallproject/home]
+
+
+Processing UsersController#index (for 74.94.200.129 at 2011-11-21 14:05:08) [GET]
+Rendering template within layouts/application
+Rendering users/index
+Completed in 786ms (View: 6, DB: 5) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/users]
+Getting into send daily mail
+Passed conditional for send daily mail
+Getting into send daily mail
+Passed conditional for send daily mail
+Getting into send daily mail
+Passed conditional for send daily mail
+Getting into send daily mail
+Passed conditional for send daily mail
+Sent mail to sauvik@cmu.edu
+Passed conditional for send daily mail
+Sent mail to Me@rebeccahunt.com
+Getting into send daily mail
+Passed conditional for send daily mail
+Sent mail to sauvik@cmu.edu
+Passed conditional for send daily mail
+Sent mail to Me@rebeccahunt.com
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-21 15:15:37) [GET]
+  Parameters: {"id"=>"1157fb24921249c141ed1e9279858dd7", "date"=>"2011/11/21"}
+Redirected to http://saucers.cups.cs.cmu.edu/fallproject/home/forgot_posts?id=1157fb24921249c141ed1e9279858dd7;date=2011/11/21
+Completed in 90ms (DB: 2) | 302 Found [http://saucers.cups.cs.cmu.edu/fallproject/home?id=1157fb24921249c141ed1e9279858dd7;date=2011/11/21]
+
+
+Processing HomeController#forgot_posts (for 74.94.200.129 at 2011-11-21 15:15:37) [GET]
+  Parameters: {"id"=>"1157fb24921249c141ed1e9279858dd7", "date"=>"2011/11/21"}
+Rendering template within layouts/application
+Rendering home/forgot_posts
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/home/forgot_posts?id=1157fb24921249c141ed1e9279858dd7;date=2011/11/21]
+
+
+Processing HomeController#index (for 74.94.200.129 at 2011-11-21 15:15:43) [GET]
+  Parameters: {"id"=>"1157fb24921249c141ed1e9279858dd7"}
+Rendering template within layouts/application
+Rendering home/index
+Completed in 696ms (View: 5, DB: 2) | 200 OK [http://saucers.cups.cs.cmu.edu/fallproject/home?id=1157fb24921249c141ed1e9279858dd7]

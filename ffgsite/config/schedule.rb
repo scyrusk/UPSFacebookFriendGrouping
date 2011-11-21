@@ -19,7 +19,12 @@
 
 # Learn more: http://github.com/javan/whenever
 
+set :output, "/home/upsfall2011/log/cron.log"
 
-every 1.day, :at => '12:10 am' do 
+every 1.day, :at => '12:09 am' do 
   runner "User.send_daily_email"
 end
+
+#every 1.day, :at => '3:15 pm' do
+#  runner "User.send_daily_email"
+#end
