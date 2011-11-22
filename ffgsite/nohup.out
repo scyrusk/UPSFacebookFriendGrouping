@@ -15655,4 +15655,344 @@ Completed in 34ms (View: 3, DB: 4) | 200 OK [http://localhost/admin]
 
 Processing AdminController#user (for ::1 at 2011-11-22 14:21:58) [GET]
   Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19"}
-  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."link" = 'd98990b695b3d0ac3a8dd37a3d74be19') LIMIT 1[0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-12-02 00:00:00' AND sms_date < '2011-12-03 00:00:00' AND user_id = 1) [0m
+Rendering template within layouts/application
+Rendering admin/user
+Completed in 50ms (View: 4, DB: 1) | 200 OK [http://localhost/admin/user?id=d98990b695b3d0ac3a8dd37a3d74be19]
+
+
+Processing AdminController#post (for ::1 at 2011-11-22 14:22:03) [GET]
+  Parameters: {"id"=>"d98990b695b3d0ac3a8dd37a3d74be19", "postid"=>"20"}
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts"."id" = '20') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering admin/post
+Rendered admin/_form_np (2.4ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/admin/post?id=d98990b695b3d0ac3a8dd37a3d74be19;postid=20]
+
+
+Processing AdminController#index (for ::1 at 2011-11-22 14:27:33) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-27 00:00:00' AND sms_date < '0000-10-28 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-05 00:00:00' AND sms_date < '0000-11-06 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-12-02 00:00:00' AND sms_date < '0000-12-03 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-02 00:00:00' AND sms_date < '0000-11-03 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-04 00:00:00' AND sms_date < '0000-11-05 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-15 00:00:00' AND sms_date < '0000-11-16 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-28 00:00:00' AND sms_date < '0000-10-29 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-01 00:00:00' AND sms_date < '0000-11-02 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-05 00:00:00' AND sms_date < '0000-11-06 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-16 00:00:00' AND sms_date < '0000-11-17 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-04 00:00:00' AND sms_date < '0000-11-05 00:00:00' AND user_id = 4) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 5) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-28 00:00:00' AND sms_date < '0000-10-29 00:00:00' AND user_id = 5) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 6) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-27 00:00:00' AND sms_date < '0000-10-28 00:00:00' AND user_id = 6) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 7) [0m
+Rendering template within layouts/application
+Rendering admin/index
+
+ActionView::TemplateError (user_url failed to generate from {:action=>"show", :controller=>"users"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["users", :id] - are they all satisfied?) on line #22 of app/views/admin/index.html.erb:
+19: </table>
+20: <br/>
+21: <br/>
+22: <%= link_to 'Go to User View', user_path %>
+
+    (eval):16:in `user_path'
+    app/views/admin/index.html.erb:22
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (73.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for ::1 at 2011-11-22 14:28:03) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-27 00:00:00' AND sms_date < '0000-10-28 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-05 00:00:00' AND sms_date < '0000-11-06 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-12-02 00:00:00' AND sms_date < '0000-12-03 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-02 00:00:00' AND sms_date < '0000-11-03 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-04 00:00:00' AND sms_date < '0000-11-05 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-15 00:00:00' AND sms_date < '0000-11-16 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-28 00:00:00' AND sms_date < '0000-10-29 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-01 00:00:00' AND sms_date < '0000-11-02 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-05 00:00:00' AND sms_date < '0000-11-06 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-16 00:00:00' AND sms_date < '0000-11-17 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-04 00:00:00' AND sms_date < '0000-11-05 00:00:00' AND user_id = 4) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 5) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-28 00:00:00' AND sms_date < '0000-10-29 00:00:00' AND user_id = 5) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 6) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-27 00:00:00' AND sms_date < '0000-10-28 00:00:00' AND user_id = 6) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 7) [0m
+Rendering template within layouts/application
+Rendering admin/index
+
+ActionView::TemplateError (user_url failed to generate from {:action=>"show", :controller=>"users"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["users", :id] - are they all satisfied?) on line #22 of app/views/admin/index.html.erb:
+19: </table>
+20: <br/>
+21: <br/>
+22: <%= link_to 'Go to User View', user_path %>
+
+    (eval):16:in `user_path'
+    app/views/admin/index.html.erb:22
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for ::1 at 2011-11-22 14:28:05) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-27 00:00:00' AND sms_date < '0000-10-28 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-05 00:00:00' AND sms_date < '0000-11-06 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-12-02 00:00:00' AND sms_date < '0000-12-03 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-02 00:00:00' AND sms_date < '0000-11-03 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-04 00:00:00' AND sms_date < '0000-11-05 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-15 00:00:00' AND sms_date < '0000-11-16 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-28 00:00:00' AND sms_date < '0000-10-29 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-01 00:00:00' AND sms_date < '0000-11-02 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-05 00:00:00' AND sms_date < '0000-11-06 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-16 00:00:00' AND sms_date < '0000-11-17 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-04 00:00:00' AND sms_date < '0000-11-05 00:00:00' AND user_id = 4) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 5) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-28 00:00:00' AND sms_date < '0000-10-29 00:00:00' AND user_id = 5) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 6) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-27 00:00:00' AND sms_date < '0000-10-28 00:00:00' AND user_id = 6) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 7) [0m
+Rendering template within layouts/application
+Rendering admin/index
+
+ActionView::TemplateError (user_url failed to generate from {:action=>"show", :controller=>"users"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["users", :id] - are they all satisfied?) on line #22 of app/views/admin/index.html.erb:
+19: </table>
+20: <br/>
+21: <br/>
+22: <%= link_to 'Go to User View', user_path %>
+
+    (eval):16:in `user_path'
+    app/views/admin/index.html.erb:22
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for ::1 at 2011-11-22 14:28:18) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-27 00:00:00' AND sms_date < '0000-10-28 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-05 00:00:00' AND sms_date < '0000-11-06 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-12-02 00:00:00' AND sms_date < '0000-12-03 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-02 00:00:00' AND sms_date < '0000-11-03 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-04 00:00:00' AND sms_date < '0000-11-05 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-15 00:00:00' AND sms_date < '0000-11-16 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-28 00:00:00' AND sms_date < '0000-10-29 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-01 00:00:00' AND sms_date < '0000-11-02 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-05 00:00:00' AND sms_date < '0000-11-06 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-16 00:00:00' AND sms_date < '0000-11-17 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-04 00:00:00' AND sms_date < '0000-11-05 00:00:00' AND user_id = 4) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 5) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-28 00:00:00' AND sms_date < '0000-10-29 00:00:00' AND user_id = 5) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 6) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-27 00:00:00' AND sms_date < '0000-10-28 00:00:00' AND user_id = 6) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 7) [0m
+Rendering template within layouts/application
+Rendering admin/index
+Completed in 70ms (View: 3, DB: 4) | 200 OK [http://localhost/admin]
+
+
+Processing UsersController#index (for ::1 at 2011-11-22 14:28:20) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-12-02 00:00:00' AND sms_date < '2011-12-03 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-02 00:00:00' AND sms_date < '2011-11-03 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-15 00:00:00' AND sms_date < '2011-11-16 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.5ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-01 00:00:00' AND sms_date < '2011-11-02 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-16 00:00:00' AND sms_date < '2011-11-17 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 4) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 5) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 5) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 6) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 6) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 7) [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 34ms (View: 3, DB: 5) | 200 OK [http://localhost/users]
+
+
+Processing AdminController#index (for ::1 at 2011-11-22 14:28:23) [GET]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-27 00:00:00' AND sms_date < '0000-10-28 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-05 00:00:00' AND sms_date < '0000-11-06 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-12-02 00:00:00' AND sms_date < '0000-12-03 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-02 00:00:00' AND sms_date < '0000-11-03 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-04 00:00:00' AND sms_date < '0000-11-05 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-15 00:00:00' AND sms_date < '0000-11-16 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-28 00:00:00' AND sms_date < '0000-10-29 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-01 00:00:00' AND sms_date < '0000-11-02 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-05 00:00:00' AND sms_date < '0000-11-06 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-16 00:00:00' AND sms_date < '0000-11-17 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-11-04 00:00:00' AND sms_date < '0000-11-05 00:00:00' AND user_id = 4) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 5) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-28 00:00:00' AND sms_date < '0000-10-29 00:00:00' AND user_id = 5) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 6) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '0000-10-27 00:00:00' AND sms_date < '0000-10-28 00:00:00' AND user_id = 6) [0m
+  [4;36;1mPost Load (0.1ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 7) [0m
+Rendering template within layouts/application
+Rendering admin/index
+Completed in 32ms (View: 1, DB: 4) | 200 OK [http://localhost/admin]
+
+
+Processing AdminController#index (for ::1 at 2011-11-22 14:31:07) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+
+NoMethodError (undefined method `getPOstsByDateMap' for #<User:0x109599a98>):
+  app/controllers/admin_controller.rb:10:in `index'
+  app/controllers/admin_controller.rb:7:in `each'
+  app/controllers/admin_controller.rb:7:in `index'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for ::1 at 2011-11-22 14:31:15) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-12-02 00:00:00' AND sms_date < '2011-12-03 00:00:00' AND user_id = 1) [0m
+
+NameError (undefined local variable or method `postsByDateMap' for #<AdminController:0x108fb4948>):
+  app/controllers/admin_controller.rb:11:in `index'
+  app/controllers/admin_controller.rb:7:in `each'
+  app/controllers/admin_controller.rb:7:in `index'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/sauvikd/.rvm/rubies/ruby-1.8.7-p352/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (64.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AdminController#index (for ::1 at 2011-11-22 14:31:26) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-12-02 00:00:00' AND sms_date < '2011-12-03 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-02 00:00:00' AND sms_date < '2011-11-03 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-15 00:00:00' AND sms_date < '2011-11-16 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.4ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-01 00:00:00' AND sms_date < '2011-11-02 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-16 00:00:00' AND sms_date < '2011-11-17 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 4) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 5) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 5) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 6) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 6) [0m
+  [4;35;1mPost Load (0.1ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 7) [0m
+Rendering template within layouts/application
+Rendering admin/index
+Completed in 34ms (View: 1, DB: 5) | 200 OK [http://localhost/admin]
+
+
+Processing UsersController#index (for ::1 at 2011-11-22 14:31:29) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-27 00:00:00' AND sms_date < '2011-10-28 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 1) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-12-02 00:00:00' AND sms_date < '2011-12-03 00:00:00' AND user_id = 1) [0m
+  [4;35;1mPost Load (0.3ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 2) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-02 00:00:00' AND sms_date < '2011-11-03 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:00:00' AND sms_date < '2011-11-05 00:00:00' AND user_id = 2) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-15 00:00:00' AND sms_date < '2011-11-16 00:00:00' AND user_id = 2) [0m
+  [4;35;1mPost Load (0.4ms)[0m   [0mSELECT * FROM "posts" WHERE ("posts".user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-10-28 00:00:00' AND sms_date < '2011-10-29 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-01 00:00:00' AND sms_date < '2011-11-02 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.3ms)[0m   [0;1mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-05 00:00:00' AND sms_date < '2011-11-06 00:00:00' AND user_id = 3) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-16 00:00:00' AND sms_date < '2011-11-17 00:00:00' AND user_id = 3) [0m
+  [4;36;1mPost Load (0.2ms)[0m   [0;1mSELECT * FROM "posts" WHERE ("posts".user_id = 4) [0m
+  [4;35;1mPost Load (0.2ms)[0m   [0mSELECT * FROM "posts" WHERE (sms_date >= '2011-11-04 00:

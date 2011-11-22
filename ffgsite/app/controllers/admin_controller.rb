@@ -7,16 +7,14 @@ class AdminController < ApplicationController
     @users.each do |u|
       numTotal = 0
       numCompleted = 0
-      # calculate user statistics
-      dateStrings = u.posts.map { |p| p.sms_date.strftime('$Y/%m/%d') }.uniq
-      dateStrings.sort! { |a,b| a <=> b }
-      dateStrings.each do |ds|
-        datePosts = u.getPostsAtDate(ds)
-        if (datePosts.length > 0 && datePosts.all? {|p| p.completed})
+      postsByDate = u.getPostsByDateMap
+      postsByDate.each do |k,v|
+        if (v.length > 0 && v.all? {|p| p.completed})
           numCompleted += 1
         end
-        numTotal += 1
+        numTotal +=1
       end
+      # calculate user statistics
       @userMap[u] = {:numComp => numCompleted, :numTot => numTotal, :done => DateTime.now > u.doneparticipating, :qualified => numCompleted >= 4}
     end
   end

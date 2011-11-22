@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.home 'home', :controller => 'home', :action => 'index'
   map.admin 'admin', :controller => 'admin', :action => 'index'
-
+  map.users 'users', :controller => 'users', :action => 'index'
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
 
