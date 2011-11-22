@@ -21,7 +21,7 @@
 
 set :output, "/home/upsfall2011/log/cron.log"
 
-every 1.day, :at => '12:09 am' do 
+every 1.day, :at => '8:00 pm' do 
   runner "User.send_daily_email"
 end
 

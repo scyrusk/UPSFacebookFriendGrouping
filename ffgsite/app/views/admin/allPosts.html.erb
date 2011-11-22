@@ -1,0 +1,29 @@
+<% if @user == nil %>
+  <h1>Invalid User ID Parameter</h1>
+<% else %>
+  <h1><%= @user.phone_number + ' admin page' %></h1>
+  <b>Legend:</b><br/>
+  <ul>
+    <li>"P" : post that was not posted to Facebook, but participant thought about posting</li>
+    <li>"NP" : Participant posted to Facebook, but did not hold back</li>
+    <li>"NN" : participant did not post anything to Facebook</li>
+  </ul>
+
+  <% @postsByDate.each do |k,v| %>
+    <center><b><%= k %></b></center><br/>
+    <% v.each do |p| %>
+      <h1>Type of Post: <%= p.kind.upcase %></h1>
+      <% @post = p; @userid = params[:id] %>
+        <% if @post.kind == 'p' %>
+          <%= render :partial => "admin/form" %>
+        <% elsif @post.kind == 'np' %>
+          <%= render :partial => "admin/form_np" %>
+        <% else %>
+          <%= render :partial => "admin/form_nn" %>
+        <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+<br/>
+<br/>
+<%= link_to 'Back', admin_path %>

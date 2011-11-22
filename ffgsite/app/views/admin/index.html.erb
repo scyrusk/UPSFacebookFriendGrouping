@@ -9,7 +9,7 @@
   </tr>
   <% @users.each do |u| %>
     <tr>
-      <td><%= link_to u.phone_number, admin_path << "/user?id=" << u.link %></td>
+      <td><%= u.phone_number %>[<%= link_to 'I', admin_path << "/user?id=" << u.link %>, <%= link_to 'A', admin_path << "/allPosts?id=" << u.link %>]</td>
       <td><%= @userMap[u][:numComp] %></td>
       <td><%= @userMap[u][:numTot] %></td>
       <td><%= (@userMap[u][:done]? 'Yes' : 'No') %></td>

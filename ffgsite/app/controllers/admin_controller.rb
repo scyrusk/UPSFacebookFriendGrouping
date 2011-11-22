@@ -30,6 +30,13 @@ class AdminController < ApplicationController
     @post = Post.find_by_id(params[:postid])
     @userid = params[:id]
   end
+  
+  def allPosts
+    @user = User.find_by_link(params[:id])
+    if @user != nil
+      @postsByDate = @user.getPostsByDateMap
+    end
+  end
 
   protected
   
