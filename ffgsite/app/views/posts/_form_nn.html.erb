@@ -10,18 +10,10 @@
 	<hr class="space" />
 	
 	<div class="span-4">
-		<%= f.label 'Description' %>
-	</div>
-	<div class="span-14 last">
-		<%= f.text_area :sms_body, :style => "height:200px;" %>
-	</div>
-	<hr class="space" />
-
-	<div class="span-4">
 		<%= f.label :nn1, 'Why didn\'t you post anything to Facebook today?' %>
 	</div>
 	<div class="span-6 append-8 last">
-    <%= f.text_area :nn1, :style => "height:400px;" %>
+    <%= f.text_area :nn1, :rows => "4" %>
 	</div>
 	<hr class="space" />
 	
@@ -29,7 +21,7 @@
 		<%= f.label :nn2, 'Why didn\'t you think about posting anything to Facebook today?' %>
 	</div>
 	<div class="span-6 append-8 last">
-    <%= f.text_area :nn2, :style => "height:400px;" %>
+    <%= f.text_area :nn2, :rows => "4" %>
 	</div>
 	<hr class="space" />
 

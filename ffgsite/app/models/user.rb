@@ -17,4 +17,14 @@ class User < ActiveRecord::Base
     d = DateTime.new(dateSplit[0].to_i,dateSplit[1].to_i,dateSplit[2].to_i)
     Post.find(:all, :conditions => [ "sms_date >= ? AND sms_date < ? AND user_id = ?", d.beginning_of_day, d.tomorrow.beginning_of_day, self.id])
   end
+
+  def getPostsByDateMap
+    @postsByDate = {}
+    dateStrings = self.posts.map { |p| p.sms_date.strftime('%Y/%m/%d')}.uniq
+    dateStrings.sort! { |a,b| a <=> b }
+    dateStrings.each do |ds|
+       @postsByDate[ds] = self.getPostsAtDate(ds)
+    end
+    return @postsByDate
+  end
 end

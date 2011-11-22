@@ -1,0 +1,19 @@
+<h1>Select User:</h1>
+<table>
+  <tr>
+    <td>Phone Number</td>
+    <td># Completed</td>
+    <td># Total</td>
+    <td>Done?</td>
+    <td>Qualifies?</td>
+  </tr>
+  <% @users.each do |u| %>
+    <tr>
+      <td><%= link_to u.phone_number, admin_path << "/user?id=" << u.link %></td>
+      <td><%= @userMap[u][:numComp] %></td>
+      <td><%= @userMap[u][:numTot] %></td>
+      <td><%= (@userMap[u][:done]? 'Yes' : 'No') %></td>
+      <td><%= (@userMap[u][:qualified]? 'Yes' : 'No') %></td>
+    </tr>
+  <% end %>
+</table>

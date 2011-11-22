@@ -1,0 +1,39 @@
+<% form_for @post, :url => @link do |f| %>
+	<%= f.error_messages %>
+  
+  <div class="span-4">
+    <%= f.label :sms_date %>
+	</div>
+  <div class="span-14 last">
+    <%= @post.sms_date %>
+    <%= f.hidden_field :sms_date %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label 'Description' %>
+	</div>
+  <div class="span-14 last">
+    <%= @post.long_description %>
+		<%= f.hidden_field :long_description %>
+	</div>
+	<hr class="space" />
+
+	<div class="span-4">
+		<%= f.label :nn1, 'Why didn\'t you post anything to Facebook today?' %>
+	</div>
+  <div class="span-6 append-8 last">
+    <%= @post.nn1 %>
+    <%= f.hidden_field :nn1 %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label :nn2, 'Why didn\'t you think about posting anything to Facebook today?' %>
+	</div>
+  <div class="span-6 append-8 last">
+    <%= @post.nn2 %>
+    <%= f.hidden_field :nn2 %>
+	</div>
+	<hr class="space" />
+<% end %>

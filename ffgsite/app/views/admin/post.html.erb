@@ -1,0 +1,11 @@
+<% if @post == nil %>
+  <h1>Invalid Post Parameter</h1>
+<% else %>
+  <% if @post.kind == 'p' %>
+    <%= render :partial => "admin/form" %>
+  <% elsif @post.kind == 'np' %>
+    <%= render :partial => "admin/form_np" %>
+  <% else %>
+    <%= render :partial => "admin/form_nn" %>
+  <% end %>
+<% end %>

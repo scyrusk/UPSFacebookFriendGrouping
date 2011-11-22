@@ -1,0 +1,33 @@
+<% if @user == nil %>
+  <h1>Invalid User ID Parameter</h1>
+<% else %>
+  <h1><%= @user.phone_number + ' admin page' %></h1>
+  <b>Legend:</b><br/>
+  <ul>
+    <li>"P" : post that was not posted to Facebook, but participant thought about posting</li>
+    <li>"NP" : Participant posted to Facebook, but did not hold back</li>
+    <li>"NN" : participant did not post anything to Facebook</li>
+  </ul>
+  
+  <table>
+    <tr>
+      <td>Type</td>
+      <td>SMS body</td>
+      <td>Description</td>
+      <td>Completed</td>
+    </tr>
+    <% @postsByDate.each do |k,v| %>
+      <tr><td colspan="4" align="center"><b><center><%= k %></center></b></td></tr>
+      <% v.each do |p| %>
+        <tr>
+          <td> <%= p.kind.upcase %></td>
+          <td> <%= p.sms_body %></td>
+          <td> <%= link_to (p.long_description == nil ? '[Blank]' : p.long_description), admin_path << "/post?id=" << @user.link << ";postid=" << p.id.to_s %></td>
+          <td><%= (p.completed ? 'Completed' : 'Incomplete') %></td>
+        </tr>
+        <% end %>
+    <% end %>
+  </table>
+<% end %>
+
+<%= link_to 'Back', admin_path %>

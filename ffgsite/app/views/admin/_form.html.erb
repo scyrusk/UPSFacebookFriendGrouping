@@ -1,0 +1,77 @@
+<% form_for @post do |f| %>
+	<%= f.error_messages %>
+
+	<div class="span-4">
+    <%= f.label :sms_date %>
+	</div>
+	<div class="span-14 last">
+	  <%=@post.sms_date.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M%p %a, %b %d")%>
+    <%= f.hidden_field :sms_date %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label 'The text message you sent:' %>
+	</div>
+	<div class="span-14 last">
+		<%= @post.sms_body %>
+		<%= f.hidden_field :sms_body %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label :long_description, 'Please describe this scenario in more detail:' %>
+	</div>
+  <div class="span-6 append-8 last">
+    <%= @post.long_description %>
+    <%= f.hidden_field :long_description %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label :p1, 'Why did you decide not to post this to Facebook?' %>
+	</div>
+  <div class="span-6 append-8 last">
+    <%= @post.p1 %>
+    <%= f.hidden_field :p1 %>
+	</div>
+	<hr class="space" />
+	
+	<div class="span-4">
+		<%= f.label :p2, "Were there any people you especially didn't want to see this post?" %>
+	</div>
+  <div class="span-6 append-8 last">
+    <%= @post.p2 %>
+    <%= f.hidden_field :p2 %>
+	</div>
+	<hr class="space" />
+
+	<div class="span-4">
+		<%= f.label :p3, 'Were there any people you especially wanted to see this post?' %>
+	</div>
+  <div class="span-6 append-8 last">
+    <%= @post.p3 %>
+    <%= f.hidden_field :p3 %>
+	</div>
+  <hr class="space" />
+
+	<div class="span-4">
+		<%= f.label :p4, 'Where were you when you decided not to post this to Facebook?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= @post.p4 %>
+    <%= f.hidden_field :p4 %>
+	</div>
+  <hr class="space" />
+
+	<div class="span-4">
+		<%= f.label :p5, 'What were you doing when you decided not to post this to Facebook?' %>
+	</div>
+	<div class="span-6 append-8 last">
+    <%= @post.p5 %>
+    <%= f.hidden_field :p5 %>
+	</div>
+  <hr class="space" />
+<% end %>
+
+<%= link_to 'Back', admin_path + "/user?id=" + @userid %>
