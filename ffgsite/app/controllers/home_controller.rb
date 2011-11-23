@@ -89,6 +89,9 @@ class HomeController < ApplicationController
           u.doneparticipating = DateTime.now + 8
           u.save
         end
+        
+        # send them email copy of instructions
+        UserMailer.deliver_instructions_copy(user)
 
         if @response == 4 #need to also create a post
           createPost(DateTime.now, params[:Body], user, "p", false)
