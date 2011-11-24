@@ -8,10 +8,10 @@
     <li>"NP" : Participant posted to Facebook, but did not hold back</li>
     <li>"NN" : participant did not post anything to Facebook</li>
   </ul>
-
-  <% @postsByDate.each do |k,v| %>
+  <% hkeys = @postsByDate.keys.sort! { |a,b| a <=> b } %>
+  <% hkeys.each do |k| %>
     <center><b><%= k %></b></center><br/>
-    <% v.each do |p| %>
+    <% @postsByDate[k].each do |p| %>
       <h1>Type of Post: <%= p.kind.upcase %></h1>
       <% @post = p; @userid = params[:id] %>
         <% if @post.kind == 'p' %>

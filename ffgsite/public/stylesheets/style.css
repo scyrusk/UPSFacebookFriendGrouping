@@ -84,7 +84,17 @@ font-style:italic;
 table, th, td {
     border: 0px ;
 }
+
 td {
 text-align: left;
 padding: 10px;
+}
+
+*.lbl {
+  font-weight: bold;
+}
+
+*.user_content {
+  font-style: italic;
+  color: green;
 }

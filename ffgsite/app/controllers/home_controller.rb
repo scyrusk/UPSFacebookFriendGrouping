@@ -69,7 +69,7 @@ class HomeController < ApplicationController
 
 
   def twilioResponse
-    #response 0 = nothing special, 1 = still need email, 2 = existing user gave us email, 3 = new user signed up correctly
+    #response 0 = nothing special, 1 = still need email, 2 = existing user gave us email, 3 = new user signed up correctly, 4 = new user signed up without email
     logger.info 'TwilioResponse entered'
 
     if (params[:From] != nil)
@@ -80,12 +80,8 @@ class HomeController < ApplicationController
         user = User.new do |u|
           u.phone_number = params[:From]
           u.link = Digest::MD5.hexdigest(params[:From])
-          if (params[:Body] =~ /.+@.+\..+/)
-            @response = 3
-            u.email = params[:Body]
-          else
-            @response = 4
-          end
+          u.email = params[:Body].scan(/\w+@\w+\.\w+/).to_s
+          @response = (u.email == '' || u.email == nil ? 4 : 3)
           u.doneparticipating = DateTime.now + 8
           u.save
         end
@@ -93,20 +89,14 @@ class HomeController < ApplicationController
         # send them email copy of instructions
         UserMailer.deliver_instructions_copy(user)
 
-        if @response == 4 #need to also create a post
-          createPost(DateTime.now, params[:Body], user, "p", false)
-        end
+        createPost(DateTime.now, params[:Body], user, "p", false) if @response == 4 #create a post if it wasn't an email
         logger.info 'Done creating new user'
       else
         if user.email == nil || user.email == ''
-          if (params[:Body] =~ /.+@.+\..+/)
-            user.email = params[:Body]
-            user.save
-            @response = 2
-          else
-            createPost(DateTime.now, params[:Body], user, "p", false)
-            @response = 1
-          end
+          user.email = params[:Body].scan(/\w+@\w+\.\w+/).to_s
+          user.save
+          @response = (user.email == '' || user.email == nil ? 1 : 2)
+          createPost(DateTime.now, params[:Body], user, "p", false) if @response == 1
         else
           createPost(DateTime.now, params[:Body], user, "p", false)
           @response = 0
@@ -190,4 +180,6 @@ class HomeController < ApplicationController
     d = DateTime.new(dateSplit[0].to_i,dateSplit[1].to_i,dateSplit[2].to_i)
     Post.find(:all, :conditions => [ "sms_date >= ? AND sms_date < ? AND user_id = ?", d.beginning_of_day, d.tomorrow.beginning_of_day, user.id])
   end
+
+  protected
 end
