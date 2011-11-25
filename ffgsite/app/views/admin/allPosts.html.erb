@@ -8,11 +8,19 @@
     <li>"NP" : Participant posted to Facebook, but did not hold back</li>
     <li>"NN" : participant did not post anything to Facebook</li>
   </ul>
+  <br/>
+  <b>Filter by:</b> 
+  <%= (link_to 'P(' + @user.posts.select{|post| post.kind == 'p'}.length.to_s + ')', admin_path + "/allPosts?id=" + @user.link + ";filter=p") unless params[:filter] == 'p' %> 
+  <%= (link_to 'NP(' + @user.posts.select{|post| post.kind == 'np'}.length.to_s + ')', admin_path + "/allPosts?id=" + @user.link + ";filter=np") unless params[:filter] == 'np' %>
+  <%= (link_to 'NN(' + @user.posts.select{|post| post.kind == 'nn'}.length.to_s + ')', admin_path + "/allPosts?id=" + @user.link + ";filter=nn") unless params[:filter] == 'nn' %>  
+  <%= (link_to 'All(' + @user.posts.length.to_s + ')', admin_path + "/allPosts?id=" + @user.link) unless params[:filter] == nil %>
+  <br/>
   <% hkeys = @postsByDate.keys.sort! { |a,b| a <=> b } %>
   <% hkeys.each do |k| %>
     <center><b><%= k %></b></center><br/>
-    <% @postsByDate[k].each do |p| %>
-      <h1>Type of Post: <%= p.kind.upcase %></h1>
+    <% renderPosts = (params[:filter] == nil ? @postsByDate[k] : @postsByDate[k].select { |post| post.kind == params[:filter] }) %>
+    <% renderPosts.each do |p| %>
+      <h2>Type of Post: <%= p.kind.upcase %></h2>
       <% @post = p; @userid = params[:id] %>
         <% if @post.kind == 'p' %>
           <%= render :partial => "admin/form" %>
