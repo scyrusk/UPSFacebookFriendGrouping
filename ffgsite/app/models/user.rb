@@ -21,12 +21,12 @@ class User < ActiveRecord::Base
   def getToPostAtDate( dateStr )
     dateSplit = dateStr.split('/')
     d = DateTime.new(dateSplit[0].to_i,dateSplit[1].to_i,dateSplit[2].to_i)
-    Post.find(:all, :conditions => [ "post_date >= ? and post_date <= ? AND user_id = ?", d.beginning_of_day, d.tomorrow.beginning_of_day, self.id])
+    Post.find(:all, :conditions => [ "post_date >= ? AND post_date <= ? AND user_id = ?", d.beginning_of_day, d.tomorrow.beginning_of_day, self.id])
   end
 
   def completedQuestionnaireAt( date )
-    posts = Post.find(:all, :conditions => [ "post_date >= ? and post_date <= ? AND user_id = ?", date.beginning_of_day, date.tomorrow.beginning_of_day, self.id])
-    return posts.length > 0 && posts.inject(true) {|pred,p| pred = pred && p.completed}
+    posts = Post.find(:all, :conditions => [ "post_date >= ? AND post_date <= ? AND user_id = ?", date.beginning_of_day, date.tomorrow.beginning_of_day, self.id])
+    return posts.length > 0 && posts.all?{|p| p.completed}
   end
 
   def getPostsByDateMap

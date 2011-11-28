@@ -12,7 +12,6 @@ class HomeController < ApplicationController
     if (params[:post] != nil && params[:postid] != nil)
       post = Post.find(params[:postid])
       post.update_attributes(params[:post])
-      Rails::logger.debug 'Update post parameter:' << params[:post][:sms_body].to_s << ''
       post.update_completed
     end
 
@@ -95,9 +94,9 @@ class HomeController < ApplicationController
           user.email = params[:Body].scan(/\w+@\w+\.\w+/).to_s
           user.save
           @response = (user.email == '' || user.email == nil ? 1 : 2)
-          createPost(DateTime.now, params[:Body], user, "p", false, (forTomm ? DateTime.now : DateTime.now.tomorrow.beginning_of_day)) if @response == 1
+          createPost(DateTime.now, params[:Body], user, "p", false, (forTomm ? DateTime.now.tomorrow.beginning_of_day : DateTime.now)) if @response == 1
         else
-          createPost(DateTime.now, params[:Body], user, "p", false, (forTomm ? DateTime.now : DateTime.now.tomorrow.beginning_of_day))
+          createPost(DateTime.now, params[:Body], user, "p", false, (forTomm ? DateTime.now.tomorrow.beginning_of_day : DateTime.now))
           @response = 0
         end
       end
