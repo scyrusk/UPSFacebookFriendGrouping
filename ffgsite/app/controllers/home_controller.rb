@@ -31,11 +31,7 @@ class HomeController < ApplicationController
         @dateLinks = {}
         dateStrings.each {|ds|
           datePosts = @user.getToPostAtDate(ds)
-          if datePosts.length > 0
-            @dateLinks[ds] = datePosts.all? {|p| p.completed}
-          else
-            @dateLinks[ds] = false
-          end
+          @dateLinks[ds] = (datePosts.length > 0 ? datePosts.all?{|p| p.completed} : false)
         }
         @renderPosts = false
       elsif datePosts == 'all'
