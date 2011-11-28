@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :sms_body,:p1,:p2,:p3,:p4,:p5,:np1,:np2,:np3,:nn1,:nn2,:long_description
+  attr_accessible :sms_body,:p1,:p2,:p3,:p4,:p5,:np1,:np2,:np3,:nn1,:nn2,:long_description,:post_date
   belongs_to :user
   
   def update_completed

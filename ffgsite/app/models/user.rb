@@ -18,12 +18,23 @@ class User < ActiveRecord::Base
     Post.find(:all, :conditions => [ "sms_date >= ? AND sms_date < ? AND user_id = ?", d.beginning_of_day, d.tomorrow.beginning_of_day, self.id])
   end
 
+  def getToPostAtDate( dateStr )
+    dateSplit = dateStr.split('/')
+    d = DateTime.new(dateSplit[0].to_i,dateSplit[1].to_i,dateSplit[2].to_i)
+    Post.find(:all, :conditions => [ "post_date >= ? and post_date <= ? AND user_id = ?", d.beginning_of_day, d.tomorrow.beginning_of_day, self.id])
+  end
+
+  def completedQuestionnaireAt( date )
+    posts = Post.find(:all, :conditions => [ "post_date >= ? and post_date <= ? AND user_id = ?", date.beginning_of_day, date.tomorrow.beginning_of_day, self.id])
+    return posts.length > 0 && posts.inject(true) {|pred,p| pred = pred && p.completed}
+  end
+
   def getPostsByDateMap
     @postsByDate = {}
-    dateStrings = self.posts.map { |p| p.sms_date.strftime('%Y/%m/%d')}.uniq
+    dateStrings = self.posts.map { |p| p.post_date.strftime('%Y/%m/%d')}.uniq
     dateStrings.sort! { |a,b| a <=> b }
     dateStrings.each do |ds|
-       @postsByDate[ds] = self.getPostsAtDate(ds)
+       @postsByDate[ds] = self.getToPostAtDate(ds)
     end
     return @postsByDate
   end

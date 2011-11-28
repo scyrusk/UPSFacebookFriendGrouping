@@ -10,6 +10,7 @@ class PostsController < ApplicationController
         @post = Post.new do |p|
           dateSplit = params[:date].split("/")
           p.sms_date = DateTime.new(dateSplit[0].to_i,dateSplit[1].to_i,dateSplit[2].to_i).to_s
+          p.post_date = p.sms_date
           p.sms_body = "[Blank]"
           p.kind = @type
           p.user = @user

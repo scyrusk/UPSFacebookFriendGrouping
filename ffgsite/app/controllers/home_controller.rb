@@ -17,7 +17,6 @@ class HomeController < ApplicationController
     end
 
     @users = User.find(:all)
-
     userID = params[:id]
     if userID == nil
       Rails::logger.debug '@userID param is nil'
@@ -28,11 +27,11 @@ class HomeController < ApplicationController
       datePosts = params[:date]
       if datePosts == nil
         Rails::logger.debug 'datePosts param is nil'
-        dateStrings = @user.posts.map {|post| post.sms_date.strftime('%Y/%m/%d')}.uniq
+        dateStrings = @user.posts.map {|post| post.post_date.strftime('%Y/%m/%d')}.uniq
         dateStrings.sort! { |a,b| a <=> b }
         @dateLinks = {}
         dateStrings.each {|ds|
-          datePosts = getPostsAtDate( @user, ds)
+          datePosts = @user.getToPostAtDate(ds)
           if datePosts.length > 0
             @dateLinks[ds] = datePosts.all? {|p| p.completed}
           else
@@ -48,7 +47,7 @@ class HomeController < ApplicationController
         dateSplit = datePosts.split('/')
         d = DateTime.new(dateSplit[0].to_i,dateSplit[1].to_i,dateSplit[2].to_i)
         Rails::logger.debug d.to_s
-        @posts = getPostsAtDate(@user, datePosts)
+        @posts = @user.getToPostAtDate(datePosts)
         if(@posts.length == 0 )
           redirect_to  home_path << "/forgot_posts?id=" << @user.link << ";date=" << params[:date], :method => "get"
         end
@@ -71,7 +70,6 @@ class HomeController < ApplicationController
   def twilioResponse
     #response 0 = nothing special, 1 = still need email, 2 = existing user gave us email, 3 = new user signed up correctly, 4 = new user signed up without email
     logger.info 'TwilioResponse entered'
-
     if (params[:From] != nil)
       logger.info 'From: ' + params[:From] + ';Body: ' + params[:Body]
       user = User.find(:first, :conditions => ["phone_number = ?",params[:From]])
@@ -92,13 +90,14 @@ class HomeController < ApplicationController
         createPost(DateTime.now, params[:Body], user, "p", false) if @response == 4 #create a post if it wasn't an email
         logger.info 'Done creating new user'
       else
+        forTomm = user.completedQuestionnaireAt( DateTime.now )
         if user.email == nil || user.email == ''
           user.email = params[:Body].scan(/\w+@\w+\.\w+/).to_s
           user.save
           @response = (user.email == '' || user.email == nil ? 1 : 2)
-          createPost(DateTime.now, params[:Body], user, "p", false) if @response == 1
+          createPost(DateTime.now, params[:Body], user, "p", false, (forTomm ? DateTime.now : DateTime.now.tomorrow.beginning_of_day)) if @response == 1
         else
-          createPost(DateTime.now, params[:Body], user, "p", false)
+          createPost(DateTime.now, params[:Body], user, "p", false, (forTomm ? DateTime.now : DateTime.now.tomorrow.beginning_of_day))
           @response = 0
         end
       end
@@ -121,11 +120,11 @@ class HomeController < ApplicationController
   end
 
   protected
-  
-  def createPost(date, body, user, kind, completed)
+  def createPost(date, body, user, kind, completed, postd=date)
     logger.info 'Creating new post...'
     post = Post.new do |p|
       p.sms_date = date
+      p.post_date = postd
       p.sms_body = body
       p.user = user
       p.kind = kind
@@ -174,12 +173,5 @@ class HomeController < ApplicationController
       end
     end
   end
-  
-  def getPostsAtDate( user, dateStr )
-    dateSplit = dateStr.split('/')
-    d = DateTime.new(dateSplit[0].to_i,dateSplit[1].to_i,dateSplit[2].to_i)
-    Post.find(:all, :conditions => [ "sms_date >= ? AND sms_date < ? AND user_id = ?", d.beginning_of_day, d.tomorrow.beginning_of_day, user.id])
-  end
-
   protected
 end

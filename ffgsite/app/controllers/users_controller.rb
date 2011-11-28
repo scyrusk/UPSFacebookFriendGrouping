@@ -6,10 +6,10 @@ class UsersController < ApplicationController
     @users.each do |u|
       numTotal = 0
       numCompleted = 0
-      dateStrings = u.posts.map { |p| p.sms_date.strftime('%Y/%m/%d') }.uniq
+      dateStrings = u.posts.map { |p| p.post_date.strftime('%Y/%m/%d')}.uniq
       dateStrings.sort! { |a,b| a <=> b }
       dateStrings.each do |ds|
-        datePosts = u.getPostsAtDate(ds)
+        datePosts = u.getToPostAtDate(ds)
         if (datePosts.length > 0 && datePosts.all? {|p| p.completed})
           numCompleted += 1
         end
