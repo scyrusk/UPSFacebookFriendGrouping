@@ -2,7 +2,7 @@
 	<%= f.error_messages %>
 
 	<div class="span-4">
-    <%= f.label :sms_date %>
+    <%= f.label 'Date:' %>
 	</div>
 	<div class="span-14 last">
 	  <%=@post.sms_date.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M%p %a, %b %d")%>
