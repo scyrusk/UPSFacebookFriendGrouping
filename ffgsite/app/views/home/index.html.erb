@@ -16,7 +16,11 @@
             <td><%= link_to post.edit_link_text, posts_path << "?id=" << @user.link << ";postid=" << post.id.to_s << ";type=" << post.kind << ";uc=u" %></td>
             <td>
             <%= 'Date: ' << post.sms_date.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M%p %a, %b %d") %> <br/>
-            <%= 'The message you sent: ' << post.sms_body %> <br/>
+            <% if post.sms_body == '[Blank]' %>
+              <%= 'You did not submit a text message' %> </br>
+            <% else %>
+              <%= 'The message you sent: ' << post.sms_body %> <br/>
+            <% end %>
             <%=  post.completed_text %>
             <td/>
           </tr>
