@@ -17,7 +17,7 @@
             <td>
             <%= 'Date: ' << post.sms_date.in_time_zone("Eastern Time (US & Canada)").strftime("%I:%M%p %a, %b %d") %> <br/>
             <% if post.sms_body == '[Blank]' %>
-              <%= 'You did not submit a text message' %> </br>
+              <i><%= 'You did not submit a text message' %></i> </br>
             <% else %>
               <%= 'The message you sent: ' << post.sms_body %> <br/>
             <% end %>
