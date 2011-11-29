@@ -10,15 +10,18 @@
 	</div>
 	<hr class="space" />
 	
-	<div class="span-4">
-		<%= f.label 'The text message you sent:' %>
-	</div>
-	<div class="span-14 last">
-		<%= @post.sms_body %>
-		<%= f.hidden_field :sms_body %>
-	</div>
-	<hr class="space" />
-	
+  <% if @post.sms_body != nil && @post.sms_body != '[Blank]' %>
+    <div class="span-4">
+      <%= f.label 'The text message you sent:' %>
+    </div>
+
+    <div class="span-14 last">
+      <%= @post.sms_body %>
+      <%= f.hidden_field :sms_body %>
+    </div>
+    <hr class="space" />
+  <% end %>
+
 	<div class="span-4">
 		<%= f.label :long_description, 'Please describe this scenario in more detail:' %>
 	</div>
