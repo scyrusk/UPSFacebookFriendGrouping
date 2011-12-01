@@ -39,7 +39,7 @@ class Post < ActiveRecord::Base
     if completed 
       'Update' 
     else 
-      'Complete' 
+      'Answer Questionnaire' 
     end
   end
 end
