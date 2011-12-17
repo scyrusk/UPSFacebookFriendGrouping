@@ -1,9 +1,0 @@
-<% if @user != nil %> <!-- if we have an ID parameter that refers to a real user -->
-  Hmmm...it seems that we haven't received any texts from you today. Please select one of the following options: <br>
-  <ul>
-    <li><%= link_to('I forgot to text something in today.', posts_path << "?id=" << @user.link << ";date=" << params[:date] << ";type=p;uc=c", :method => "get") %></li>
-    <li><%= link_to("I texted something in, but you didn't receive it.", posts_path << "?id=" << @user.link << ";date=" << params[:date] << ";type=p;uc=c", :method => "get") %></li>
-    <li><%= link_to("I didn't text anything in.", home_path << "/posted_on_fb?id=" << @user.link << ";date=" << params[:date], :method => "get") %></li>
-  </ul>
-<% end %>
-
